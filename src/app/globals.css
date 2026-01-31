@@ -1,26 +1,158 @@
 @import "tailwindcss";
 
+/* Atlas Mitigation Brand Colors & Theme */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand Colors */
+  --atlas-primary: 199 89% 48%;        /* Teal/Blue - from logo */
+  --atlas-primary-dark: 199 89% 38%;
+  --atlas-secondary: 220 13% 31%;       /* Professional charcoal */
+  --atlas-accent: 14 100% 57%;          /* Emergency orange/red */
+  --atlas-accent-dark: 14 100% 47%;
+
+  /* Background Colors */
+  --background: 0 0% 100%;
+  --foreground: 224 10% 20%;
+
+  /* Surface Colors */
+  --card: 0 0% 100%;
+  --card-foreground: 224 10% 20%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 224 10% 20%;
+
+  /* UI Colors */
+  --primary: 199 89% 48%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 220 14% 96%;
+  --secondary-foreground: 220 13% 31%;
+  --muted: 220 14% 96%;
+  --muted-foreground: 220 9% 46%;
+  --accent: 14 100% 57%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  /* Border & Input */
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 199 89% 48%;
+
+  /* Radius */
+  --radius: 0.5rem;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  /* Atlas Brand Colors */
+  --color-atlas-primary: hsl(var(--atlas-primary));
+  --color-atlas-primary-dark: hsl(var(--atlas-primary-dark));
+  --color-atlas-secondary: hsl(var(--atlas-secondary));
+  --color-atlas-accent: hsl(var(--atlas-accent));
+  --color-atlas-accent-dark: hsl(var(--atlas-accent-dark));
+
+  /* Font */
+  --font-sans: var(--font-inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base Styles */
+* {
+  border-color: hsl(var(--border));
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Focus Styles */
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background: hsl(var(--primary) / 0.2);
+  color: hsl(var(--foreground));
+}
+
+/* Emergency Banner Animation */
+@keyframes pulse-emergency {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse-emergency {
+  animation: pulse-emergency 2s ease-in-out infinite;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Click to call styling for mobile */
+a[href^="tel:"] {
+  white-space: nowrap;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Better touch targets on mobile */
+@media (max-width: 768px) {
+  /* Ensure minimum touch target size */
+  button,
+  a,
+  input[type="submit"],
+  input[type="button"] {
+    min-height: 44px;
+  }
+
+  /* Remove default tap highlight */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Add active state for better touch feedback */
+  button:active,
+  a:active {
+    opacity: 0.7;
+    transition: opacity 0.1s;
+  }
+
+  /* Prevent text size adjustment on orientation change */
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Improve scrolling on iOS */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
 }
