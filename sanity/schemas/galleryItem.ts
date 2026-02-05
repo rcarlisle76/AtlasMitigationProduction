@@ -17,7 +17,6 @@ export const galleryItem = defineType({
       title: "Service Type",
       type: "reference",
       to: [{ type: "service" }],
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "location",
@@ -31,14 +30,12 @@ export const galleryItem = defineType({
       title: "Before Image",
       type: "image",
       options: { hotspot: true },
-      validation: (Rule) => Rule.required(),
       fields: [
         {
           name: "alt",
           type: "string",
           title: "Alt Text",
           description: "Describe the damage shown",
-          validation: (Rule) => Rule.required(),
         },
       ],
     }),
@@ -47,14 +44,12 @@ export const galleryItem = defineType({
       title: "After Image",
       type: "image",
       options: { hotspot: true },
-      validation: (Rule) => Rule.required(),
       fields: [
         {
           name: "alt",
           type: "string",
           title: "Alt Text",
           description: "Describe the restored condition",
-          validation: (Rule) => Rule.required(),
         },
       ],
     }),

@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Phone, MapPin, Clock, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -156,19 +157,45 @@ export default function GalleryPageClient({ projects }: GalleryPageClientProps) 
                   <div className="relative aspect-video overflow-hidden bg-muted">
                     <div className="absolute inset-0 grid grid-cols-2">
                       {/* Before */}
-                      <div className="bg-gradient-to-br from-red-100 to-red-200">
-                        <div className="flex h-full items-center justify-center">
-                          <span className="text-2xl font-bold text-red-600">
-                            Before
-                          </span>
+                      <div className="relative">
+                        {project.beforeImage ? (
+                          <Image
+                            src={project.beforeImage}
+                            alt={`${project.title} - Before`}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 50vw, 25vw"
+                          />
+                        ) : (
+                          <div className="flex h-full items-center justify-center bg-gradient-to-br from-red-100 to-red-200">
+                            <span className="text-2xl font-bold text-red-600">
+                              Before
+                            </span>
+                          </div>
+                        )}
+                        <div className="absolute bottom-2 left-2 rounded bg-black/60 px-2 py-1 text-xs font-semibold text-white">
+                          Before
                         </div>
                       </div>
                       {/* After */}
-                      <div className="bg-gradient-to-br from-green-100 to-green-200">
-                        <div className="flex h-full items-center justify-center">
-                          <span className="text-2xl font-bold text-green-600">
-                            After
-                          </span>
+                      <div className="relative">
+                        {project.afterImage ? (
+                          <Image
+                            src={project.afterImage}
+                            alt={`${project.title} - After`}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 50vw, 25vw"
+                          />
+                        ) : (
+                          <div className="flex h-full items-center justify-center bg-gradient-to-br from-green-100 to-green-200">
+                            <span className="text-2xl font-bold text-green-600">
+                              After
+                            </span>
+                          </div>
+                        )}
+                        <div className="absolute bottom-2 right-2 rounded bg-black/60 px-2 py-1 text-xs font-semibold text-white">
+                          After
                         </div>
                       </div>
                     </div>
@@ -288,7 +315,13 @@ export default function GalleryPageClient({ projects }: GalleryPageClientProps) 
               </button>
             </div>
 
-            <BeforeAfterSlider className="rounded-lg" />
+            <BeforeAfterSlider
+              beforeImage={selectedProject.beforeImage}
+              afterImage={selectedProject.afterImage}
+              beforeAlt={`${selectedProject.title} - Before restoration`}
+              afterAlt={`${selectedProject.title} - After restoration`}
+              className="rounded-lg"
+            />
 
             <div className="mt-4 rounded-lg bg-white p-6">
               <p className="text-muted-foreground">

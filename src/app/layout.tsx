@@ -1,8 +1,6 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import { Header, Footer, MobileCallButton } from "@/components/layout"
-import { LocalBusinessSchema } from "@/components/seo"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -82,11 +80,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="flex min-h-screen flex-col antialiased font-sans">
-        <LocalBusinessSchema />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <MobileCallButton />
+        {children}
       </body>
     </html>
   )

@@ -112,7 +112,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
               <div className="grid gap-8">
                 {sortedPosts.map((post) => {
-                  const categoryInfo = blogCategories[post.category]
+                  const categoryInfo = post.category ? blogCategories[post.category] : null
                   return (
                     <Card
                       key={post.slug}
@@ -128,7 +128,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                                   Featured Image
                                 </div>
                                 <div className="text-xs">
-                                  {post.category.replace("-", " ")}
+                                  {post.category ? post.category.replace("-", " ") : "General"}
                                 </div>
                               </div>
                             </div>
@@ -138,14 +138,16 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                         {/* Content */}
                         <div className="md:col-span-8">
                           <CardHeader className="p-6 pb-4">
-                            <div className="mb-3 flex items-center gap-3">
-                              <Badge
-                                className={categoryInfo.color}
-                                variant="outline"
-                              >
-                                {categoryInfo.label}
-                              </Badge>
-                            </div>
+                            {categoryInfo && (
+                              <div className="mb-3 flex items-center gap-3">
+                                <Badge
+                                  className={categoryInfo.color}
+                                  variant="outline"
+                                >
+                                  {categoryInfo.label}
+                                </Badge>
+                              </div>
+                            )}
                             <Link href={`/blog/${post.slug}`}>
                               <h2 className="text-2xl font-bold leading-tight transition-colors group-hover:text-atlas-primary">
                                 {post.title}

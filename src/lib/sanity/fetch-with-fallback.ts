@@ -1,4 +1,4 @@
-import { client } from "./client"
+import { client, urlFor } from "./client"
 import {
   allBlogPostsQuery,
   blogPostBySlugQuery,
@@ -9,7 +9,7 @@ import {
 } from "./queries"
 
 // Import local data as fallbacks
-import { blogPosts, getRecentPosts, type BlogPost } from "@/data/blog-posts"
+import { blogPosts, getRecentPosts, defaultAuthor, type BlogPost, type BlogAuthor } from "@/data/blog-posts"
 import { galleryProjects, type GalleryProject } from "@/data/gallery"
 import { testimonials, type Testimonial } from "@/data/testimonials"
 
@@ -127,14 +127,45 @@ export async function getFeaturedTestimonials(): Promise<Testimonial[]> {
   }
 }
 
+// Map Sanity categories to local BlogCategory types
+const sanityCategoryMap: Record<string, BlogPost["category"]> = {
+  "water-damage": "water-damage",
+  "fire-damage": "fire-damage",
+  "mold": "mold",
+  "insurance": "insurance",
+  "prevention": "prevention",
+  "restoration-tips": "restoration-tips",
+  // Map Sanity-only categories to appropriate local categories
+  "tips": "restoration-tips",
+  "emergency": "prevention",
+  "news": "restoration-tips",
+  "case-studies": "restoration-tips",
+}
+
 // Transform functions to convert Sanity data to local format
 function transformSanityBlogPost(sanityPost: any): BlogPost {
+  // Map Sanity category to valid local category, defaulting to "restoration-tips"
+  const mappedCategory = sanityPost.category
+    ? sanityCategoryMap[sanityPost.category] || "restoration-tips"
+    : "restoration-tips"
+
+  // Transform author to BlogAuthor object
+  const author: BlogAuthor = sanityPost.author
+    ? typeof sanityPost.author === "string"
+      ? { name: sanityPost.author, role: "Restoration Expert" }
+      : {
+          name: sanityPost.author.name || defaultAuthor.name,
+          role: sanityPost.author.role || defaultAuthor.role,
+          image: sanityPost.author.image,
+        }
+    : defaultAuthor
+
   return {
     slug: sanityPost.slug?.current || sanityPost.slug,
     title: sanityPost.title,
     excerpt: sanityPost.excerpt || "",
-    category: sanityPost.category || "tips",
-    author: sanityPost.author || "Atlas Mitigation Team",
+    category: mappedCategory,
+    author,
     datePublished: sanityPost.publishedAt
       ? new Date(sanityPost.publishedAt).toISOString().split("T")[0]
       : new Date().toISOString().split("T")[0],
@@ -146,12 +177,55 @@ function transformSanityBlogPost(sanityPost: any): BlogPost {
   }
 }
 
+// Map service types to sample image numbers
+const serviceTypeImageMap: Record<string, number> = {
+  "water-damage": 1,
+  "fire-damage": 2,
+  "mold": 3,
+  "storm-damage": 4,
+  "smoke-damage": 2,
+}
+
+// Detect service type from title if not explicitly set
+function detectServiceTypeFromTitle(title: string): string {
+  const lowerTitle = title.toLowerCase()
+  if (lowerTitle.includes("water") || lowerTitle.includes("flood")) return "water-damage"
+  if (lowerTitle.includes("fire")) return "fire-damage"
+  if (lowerTitle.includes("mold")) return "mold"
+  if (lowerTitle.includes("storm") || lowerTitle.includes("wind") || lowerTitle.includes("roof")) return "storm-damage"
+  if (lowerTitle.includes("smoke")) return "smoke-damage"
+  return "water-damage"
+}
+
 function transformSanityGalleryItem(sanityItem: any): GalleryProject {
+  // Try to get service from reference, otherwise detect from title
+  const serviceSlug = sanityItem.service?.slug?.current || detectServiceTypeFromTitle(sanityItem.title || "")
+  const imageNum = serviceTypeImageMap[serviceSlug] || 1
+
+  // Determine fallback images based on service type
+  const serviceFallbackMap: Record<string, string> = {
+    "water-damage": "water-damage",
+    "fire-damage": "fire-damage",
+    "mold": "mold",
+    "storm-damage": "storm-damage",
+    "smoke-damage": "fire-damage",
+  }
+  const fallbackType = serviceFallbackMap[serviceSlug] || "water-damage"
+
+  // Convert Sanity image references to URLs
+  const beforeImageUrl = sanityItem.beforeImage?.asset
+    ? urlFor(sanityItem.beforeImage).width(800).height(600).url()
+    : `/gallery/before-${fallbackType}-${imageNum}.jpg`
+
+  const afterImageUrl = sanityItem.afterImage?.asset
+    ? urlFor(sanityItem.afterImage).width(800).height(600).url()
+    : `/gallery/after-${fallbackType}-${imageNum}.jpg`
+
   return {
     id: sanityItem._id,
     slug: sanityItem.slug?.current || sanityItem._id,
     title: sanityItem.title,
-    serviceType: sanityItem.service?.slug?.current || "water-damage",
+    serviceType: serviceSlug,
     propertyType: sanityItem.propertyType || "residential",
     location: sanityItem.location?.city
       ? `${sanityItem.location.city}, GA`
@@ -160,14 +234,14 @@ function transformSanityGalleryItem(sanityItem: any): GalleryProject {
     completionDate: sanityItem.completionDate
       ? new Date(sanityItem.completionDate).toISOString().split("T")[0]
       : new Date().toISOString().split("T")[0],
-    duration: sanityItem.duration || "3-5 days",
-    stats: sanityItem.stats || [
-      { label: "Area", value: "N/A" },
-      { label: "Duration", value: "N/A" },
-      { label: "Rating", value: "5.0" },
+    duration: sanityItem.stats?.duration || "3-5 days",
+    stats: [
+      { label: "Area", value: sanityItem.stats?.area || "N/A" },
+      { label: "Duration", value: sanityItem.stats?.duration || "N/A" },
+      { label: "Completion", value: sanityItem.stats?.timeToComplete || "N/A" },
     ],
-    beforeImage: sanityItem.beforeImage || "/gallery/before-placeholder.jpg",
-    afterImage: sanityItem.afterImage || "/gallery/after-placeholder.jpg",
+    beforeImage: beforeImageUrl,
+    afterImage: afterImageUrl,
   }
 }
 

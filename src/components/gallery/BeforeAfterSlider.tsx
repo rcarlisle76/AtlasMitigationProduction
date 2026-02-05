@@ -1,17 +1,26 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
+import Image from "next/image"
 import { cn } from "@/lib/utils"
 
 interface BeforeAfterSliderProps {
+  beforeImage?: string
+  afterImage?: string
   beforeLabel?: string
   afterLabel?: string
+  beforeAlt?: string
+  afterAlt?: string
   className?: string
 }
 
 export function BeforeAfterSlider({
+  beforeImage,
+  afterImage,
   beforeLabel = "Before",
   afterLabel = "After",
+  beforeAlt = "Before restoration",
+  afterAlt = "After restoration",
   className,
 }: BeforeAfterSliderProps) {
   const [sliderPosition, setSliderPosition] = useState(50)
@@ -70,13 +79,23 @@ export function BeforeAfterSlider({
       onTouchStart={handleMouseDown}
     >
       {/* After Image (Background) */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-100 to-green-200">
-        <div className="flex h-full items-center justify-center">
-          <div className="text-center">
-            <div className="text-6xl font-bold text-green-600">After</div>
-            <div className="mt-2 text-sm text-green-700">Restored Property</div>
+      <div className="absolute inset-0">
+        {afterImage ? (
+          <Image
+            src={afterImage}
+            alt={afterAlt}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 80vw"
+          />
+        ) : (
+          <div className="flex h-full items-center justify-center bg-gradient-to-br from-green-100 to-green-200">
+            <div className="text-center">
+              <div className="text-6xl font-bold text-green-600">After</div>
+              <div className="mt-2 text-sm text-green-700">Restored Property</div>
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       {/* Before Image (Overlay) */}
@@ -84,15 +103,23 @@ export function BeforeAfterSlider({
         className="absolute inset-0 overflow-hidden"
         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-red-100 to-red-200">
-          <div className="flex h-full items-center justify-center">
-            <div className="text-center">
-              <div className="text-6xl font-bold text-red-600">Before</div>
-              <div className="mt-2 text-sm text-red-700">
-                Damaged Property
+        <div className="absolute inset-0">
+          {beforeImage ? (
+            <Image
+              src={beforeImage}
+              alt={beforeAlt}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 80vw"
+            />
+          ) : (
+            <div className="flex h-full items-center justify-center bg-gradient-to-br from-red-100 to-red-200">
+              <div className="text-center">
+                <div className="text-6xl font-bold text-red-600">Before</div>
+                <div className="mt-2 text-sm text-red-700">Damaged Property</div>
               </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
 
