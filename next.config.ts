@@ -1,6 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Redirect /studio to /studio/structure
+  async redirects() {
+    return [
+      {
+        source: '/studio',
+        destination: '/studio/structure',
+        permanent: false,
+      },
+    ];
+  },
+
   // Performance optimizations
   images: {
     formats: ['image/avif', 'image/webp'],

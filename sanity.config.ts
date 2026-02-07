@@ -16,6 +16,8 @@ export default defineConfig({
 
   plugins: [
     structureTool({
+      name: "structure",
+      title: "Content",
       structure: (S: StructureBuilder) =>
         S.list()
           .title("Content")
