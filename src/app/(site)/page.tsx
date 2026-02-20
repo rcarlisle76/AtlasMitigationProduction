@@ -1,6 +1,5 @@
 import Link from "next/link"
 import {
-  Phone,
   Droplets,
   Flame,
   Wind,
@@ -20,6 +19,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ReviewSchema } from "@/components/seo"
 import { getFeaturedTestimonials } from "@/lib/sanity/fetch-with-fallback"
+import { YelpIcon } from "@/components/ui/yelp-icon"
 
 // Services data
 const services = [
@@ -70,7 +70,7 @@ const services = [
 // Why Choose Us data
 const benefits = [
   {
-    title: "24/7 Emergency Response",
+    title: "Emergency Response",
     description:
       "Disaster doesn't wait, and neither do we. Our team is available around the clock for immediate response.",
     icon: Clock,
@@ -98,14 +98,18 @@ const benefits = [
 
 // Service areas
 const serviceAreas = [
-  { city: "Acworth", featured: true },
-  { city: "Marietta", featured: true },
-  { city: "Kennesaw", featured: true },
-  { city: "Woodstock", featured: false },
-  { city: "Canton", featured: false },
-  { city: "Roswell", featured: false },
-  { city: "Alpharetta", featured: false },
-  { city: "Smyrna", featured: false },
+  { city: "Acworth", slug: "acworth", featured: true },
+  { city: "Marietta", slug: "marietta", featured: true },
+  { city: "Kennesaw", slug: "kennesaw", featured: true },
+  { city: "Woodstock", slug: "woodstock", featured: false },
+  { city: "Canton", slug: "canton", featured: false },
+  { city: "Roswell", slug: "roswell", featured: false },
+  { city: "Alpharetta", slug: "alpharetta", featured: false },
+  { city: "Smyrna", slug: "smyrna", featured: false },
+  { city: "Decatur", slug: "decatur", featured: false },
+  { city: "Buckhead", slug: "buckhead", featured: false },
+  { city: "Downtown Atlanta", slug: "downtown-atlanta", featured: false },
+  { city: "Conyers", slug: "conyers", featured: false },
 ]
 
 // Trust badges/certifications
@@ -146,7 +150,7 @@ export default async function HomePage() {
             {/* Emergency badge */}
             <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-atlas-accent px-4 py-2 text-sm font-semibold animate-pulse-emergency">
               <Clock className="h-4 w-4" />
-              24/7 Emergency Service Available
+              Emergency Service Available
             </div>
 
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
@@ -162,10 +166,9 @@ export default async function HomePage() {
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Button variant="emergency" size="xl" className="min-h-[56px]" asChild>
-                <a href="tel:+14048083677" className="flex items-center gap-2">
-                  <Phone className="h-5 w-5" />
-                  Call Now: (404) 808-3677
-                </a>
+                <Link href="/contact" className="flex items-center gap-2">
+                  Get Free Estimate
+                </Link>
               </Button>
               <Button
                 variant="outline"
@@ -173,7 +176,7 @@ export default async function HomePage() {
                 className="border-white bg-transparent text-white hover:bg-white hover:text-atlas-secondary min-h-[56px]"
                 asChild
               >
-                <Link href="/contact">Get Free Estimate</Link>
+                <Link href="/services">Our Services</Link>
               </Button>
             </div>
 
@@ -416,7 +419,7 @@ export default async function HomePage() {
                 {serviceAreas.map((area) => (
                   <Link
                     key={area.city}
-                    href={`/locations/${area.city.toLowerCase()}`}
+                    href={`/locations/${area.slug}`}
                     className="flex items-center gap-2 text-foreground hover:text-atlas-primary transition-colors"
                   >
                     <MapPin
@@ -436,15 +439,17 @@ export default async function HomePage() {
               </div>
             </div>
 
-            {/* Map placeholder */}
-            <div className="relative aspect-square rounded-lg bg-muted lg:aspect-auto">
-              <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-                <div className="text-center">
-                  <MapPin className="mx-auto h-12 w-12" />
-                  <div className="mt-2 text-sm font-medium">Service Area Map</div>
-                  <div className="text-xs">Coming Soon</div>
-                </div>
-              </div>
+            <div className="relative aspect-square overflow-hidden rounded-lg lg:aspect-auto lg:min-h-[400px]">
+              <iframe
+                src="https://www.google.com/maps?q=Atlas+Mitigation,+Acworth,+GA&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Atlas Mitigation Service Area - Metro Atlanta"
+              />
             </div>
           </div>
         </div>
@@ -460,6 +465,15 @@ export default async function HomePage() {
                 <span className="text-sm font-medium">{cert}</span>
               </div>
             ))}
+            <a
+              href="https://www.yelp.com/biz/atlas-mitigation-acworth"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-muted-foreground hover:text-[#FF1A1A] transition-colors"
+            >
+              <YelpIcon className="h-5 w-5 text-[#FF1A1A]" />
+              <span className="text-sm font-medium">Recommended on Yelp</span>
+            </a>
           </div>
         </div>
       </section>
@@ -475,18 +489,7 @@ export default async function HomePage() {
             now for immediate 24/7 emergency response in the Atlanta metro area.
           </p>
 
-          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Button
-              variant="emergency"
-              size="xl"
-              className="bg-white text-atlas-primary hover:bg-white/90 min-h-[56px] w-full sm:w-auto"
-              asChild
-            >
-              <a href="tel:+14048083677" className="flex items-center gap-2">
-                <Phone className="h-5 w-5" />
-                (404) 808-3677
-              </a>
-            </Button>
+          <div className="mt-10">
             <Button
               variant="outline"
               size="xl"

@@ -219,17 +219,17 @@ export default function ContactPage() {
             </p>
           </div>
 
-          {/* Map Placeholder */}
-          <div className="mt-8 aspect-[21/9] overflow-hidden rounded-lg bg-muted">
-            <div className="flex h-full items-center justify-center text-muted-foreground">
-              <div className="text-center">
-                <MapPin className="mx-auto h-16 w-16" />
-                <div className="mt-4 text-lg font-medium">
-                  1720 Mars Hill Rd, Acworth, GA 30101
-                </div>
-                <p className="mt-2 text-sm">Interactive map coming soon</p>
-              </div>
-            </div>
+          <div className="mt-8 aspect-[21/9] overflow-hidden rounded-lg">
+            <iframe
+              src="https://www.google.com/maps?q=1720+Mars+Hill+Rd,+Acworth,+GA+30101&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Atlas Mitigation - 1720 Mars Hill Rd, Acworth, GA 30101"
+            />
           </div>
         </div>
       </section>

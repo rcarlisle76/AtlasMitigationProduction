@@ -58,7 +58,7 @@ export function Header() {
             <div className="hidden items-center gap-6 sm:flex">
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-atlas-accent" />
-                <span>24/7 Emergency Service</span>
+                <span>Emergency Service</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4" />
@@ -93,6 +93,7 @@ export function Header() {
               <div className="ml-2 flex flex-col leading-tight">
                 <span className="text-lg font-bold text-atlas-secondary lg:text-xl">Atlas</span>
                 <span className="text-sm font-semibold text-atlas-primary lg:text-base">Mitigation</span>
+                <span className="hidden whitespace-nowrap text-[9px] italic text-muted-foreground lg:inline-block lg:text-[11px]">Atlas holds the World. We restore yours.</span>
               </div>
             </Link>
 
@@ -161,12 +162,6 @@ export function Header() {
               </Button>
               <Button variant="outline" asChild>
                 <Link href="/contact">Get Free Quote</Link>
-              </Button>
-              <Button variant="emergency" asChild>
-                <a href="tel:+14048083677" className="flex items-center gap-2">
-                  <Phone className="h-4 w-4" />
-                  Call Now
-                </a>
               </Button>
             </div>
 

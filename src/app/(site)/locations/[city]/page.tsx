@@ -254,14 +254,17 @@ export default async function LocationPage({ params }: LocationPageProps) {
                 ))}
               </div>
 
-              {/* Map Placeholder */}
-              <div className="mt-8 aspect-video rounded-lg bg-muted">
-                <div className="flex h-full items-center justify-center text-muted-foreground">
-                  <div className="text-center">
-                    <MapPin className="mx-auto h-12 w-12" />
-                    <div className="mt-2 text-sm">Service Area Map</div>
-                  </div>
-                </div>
+              <div className="mt-8 aspect-video overflow-hidden rounded-lg">
+                <iframe
+                  src={`https://www.google.com/maps?q=${encodeURIComponent(location.city + ', ' + location.state)}&output=embed`}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title={`Service Area Map - ${location.city}, ${location.state}`}
+                />
               </div>
             </div>
           </div>

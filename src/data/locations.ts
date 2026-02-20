@@ -253,6 +253,105 @@ export const locations: Location[] = [
     metaDescription:
       "24/7 water and fire damage restoration in Dallas & Paulding County, GA. Emergency response. Certified technicians. Call (404) 808-3677.",
   },
+  {
+    slug: "decatur",
+    city: "Decatur",
+    state: "GA",
+    county: "DeKalb County",
+    featured: false,
+    description:
+      "Atlas Mitigation provides expert restoration services to Decatur, Georgia, a vibrant city known for its walkable downtown, independent restaurants, and diverse neighborhoods. Located just east of Atlanta, Decatur features a mix of charming bungalows, historic homes, and modern developments. Our certified technicians respond quickly to water, fire, and mold emergencies throughout Decatur, delivering restoration that preserves the unique character of each property.",
+    neighborhoods: [
+      "Downtown Decatur",
+      "Oakhurst",
+      "Winnona Park",
+      "MAK Historic District",
+      "Great Lakes",
+      "Glennwood Estates",
+      "Medlock Park",
+      "Midway Woods",
+    ],
+    zipCodes: ["30030", "30031", "30032", "30033", "30034"],
+    responseTime: "45 minutes",
+    projectsCompleted: 53,
+    metaTitle: "Water & Fire Damage Restoration Decatur GA | 24/7 Emergency",
+    metaDescription:
+      "24/7 water and fire damage restoration in Decatur, GA. Serving Oakhurst, Downtown Decatur & all DeKalb County neighborhoods. Call (404) 808-3677.",
+  },
+  {
+    slug: "buckhead",
+    city: "Buckhead",
+    state: "GA",
+    county: "Fulton County",
+    featured: false,
+    description:
+      "Atlas Mitigation specializes in high-end restoration services for Buckhead, Atlanta's premier upscale district. Home to luxury estates, high-rise condominiums, and prestigious commercial properties, Buckhead demands restoration professionals who understand the value of fine finishes and premium materials. Our team provides meticulous restoration for water, fire, and mold damage, protecting your investment with the care and attention Buckhead properties deserve.",
+    neighborhoods: [
+      "Tuxedo Park",
+      "Chastain Park",
+      "Peachtree Hills",
+      "Garden Hills",
+      "Peachtree Battle",
+      "Brookhaven",
+      "Lenox",
+      "Phipps Plaza Area",
+    ],
+    zipCodes: ["30305", "30309", "30319", "30324", "30326", "30342"],
+    responseTime: "40 minutes",
+    projectsCompleted: 71,
+    metaTitle: "Water & Fire Damage Restoration Buckhead Atlanta | Luxury Specialists",
+    metaDescription:
+      "Premium water and fire damage restoration in Buckhead, Atlanta. Luxury home & high-rise specialists. Tuxedo Park, Chastain Park & all areas. Call (404) 808-3677.",
+  },
+  {
+    slug: "downtown-atlanta",
+    city: "Downtown Atlanta",
+    state: "GA",
+    county: "Fulton County",
+    featured: false,
+    description:
+      "Atlas Mitigation serves Downtown Atlanta with comprehensive commercial and residential restoration services. As the heart of Georgia's capital city, Downtown Atlanta features high-rise office buildings, historic loft conversions, and mixed-use developments that require specialized restoration expertise. Our team handles everything from water damage in commercial towers to fire restoration in historic properties, minimizing downtime and preserving the integrity of every structure.",
+    neighborhoods: [
+      "Centennial Hill",
+      "Fairlie-Poplar",
+      "South Downtown",
+      "Castleberry Hill",
+      "Five Points",
+      "Peachtree Center",
+      "Sweet Auburn",
+      "SoNo District",
+    ],
+    zipCodes: ["30303", "30308", "30312", "30313", "30314"],
+    responseTime: "35 minutes",
+    projectsCompleted: 92,
+    metaTitle: "Water & Fire Damage Restoration Downtown Atlanta | Commercial Experts",
+    metaDescription:
+      "24/7 water and fire damage restoration in Downtown Atlanta. Commercial & residential specialists. Fast 35-min response. Call (404) 808-3677.",
+  },
+  {
+    slug: "conyers",
+    city: "Conyers",
+    state: "GA",
+    county: "Rockdale County",
+    featured: false,
+    description:
+      "Atlas Mitigation extends our professional restoration services to Conyers, Georgia, the county seat of Rockdale County. Located east of Atlanta along I-20, Conyers offers a mix of suburban neighborhoods and rural charm. Our certified technicians provide fast emergency response for water, fire, mold, and storm damage throughout Conyers and surrounding Rockdale County communities, helping homeowners and businesses recover quickly from unexpected disasters.",
+    neighborhoods: [
+      "Downtown Conyers",
+      "Olde Towne Conyers",
+      "Honey Creek",
+      "Pine Log",
+      "Milstead",
+      "Magnet",
+      "Lakeview Estates",
+    ],
+    zipCodes: ["30012", "30013", "30094"],
+    responseTime: "55 minutes",
+    projectsCompleted: 31,
+    metaTitle: "Water & Fire Damage Restoration Conyers GA | Rockdale County",
+    metaDescription:
+      "Professional water and fire damage restoration in Conyers & Rockdale County, GA. 24/7 emergency response. Certified technicians. Call (404) 808-3677.",
+  },
 ]
 
 export function getLocationBySlug(slug: string): Location | undefined {

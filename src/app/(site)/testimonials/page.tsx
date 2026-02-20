@@ -1,10 +1,11 @@
 import { Metadata } from "next"
-import { Star, MapPin, Quote, Phone } from "lucide-react"
+import { Star, MapPin, Quote, Phone, ExternalLink } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { getAllTestimonials } from "@/lib/sanity/fetch-with-fallback"
 import { ReviewSchema } from "@/components/seo"
+import { YelpIcon } from "@/components/ui/yelp-icon"
 
 export const metadata: Metadata = {
   title: "Customer Testimonials | Atlas Mitigation",
@@ -128,6 +129,57 @@ export default async function TestimonialsPage() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Yelp Reviews Section */}
+      <section className="border-y bg-gradient-to-br from-gray-50 to-white py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="inline-flex items-center gap-3 rounded-full bg-[#FF1A1A]/10 px-5 py-2 mb-6">
+              <YelpIcon className="h-6 w-6 text-[#FF1A1A]" />
+              <span className="text-sm font-semibold text-[#FF1A1A]">
+                Find Us on Yelp
+              </span>
+            </div>
+
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+              See Our Reviews on Yelp
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Atlas Mitigation is proud to be recommended on Yelp. Read
+              honest reviews from real customers about our restoration
+              services, or share your own experience.
+            </p>
+
+            <div className="mt-8 flex flex-col items-center gap-6 sm:flex-row sm:justify-center">
+              <a
+                href="https://www.yelp.com/biz/atlas-mitigation-acworth"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg bg-[#FF1A1A] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#D41519] transition-colors min-h-[44px]"
+              >
+                <YelpIcon className="h-5 w-5" />
+                Read Our Yelp Reviews
+                <ExternalLink className="h-4 w-4" />
+              </a>
+              <a
+                href="https://www.yelp.com/writeareview/biz/atlas-mitigation-acworth"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-[#FF1A1A] px-6 py-3 text-sm font-semibold text-[#FF1A1A] hover:bg-[#FF1A1A]/5 transition-colors min-h-[44px]"
+              >
+                <Star className="h-4 w-4" />
+                Leave a Review
+                <ExternalLink className="h-4 w-4" />
+              </a>
+            </div>
+
+            <p className="mt-6 text-xs text-muted-foreground">
+              Your feedback helps other homeowners find trusted restoration
+              services in the Atlanta metro area.
+            </p>
           </div>
         </div>
       </section>

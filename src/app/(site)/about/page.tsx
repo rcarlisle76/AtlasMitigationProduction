@@ -331,15 +331,17 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Map Placeholder */}
-            <div className="relative aspect-square rounded-lg bg-muted lg:aspect-auto">
-              <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-                <div className="text-center">
-                  <MapPin className="mx-auto h-16 w-16" />
-                  <div className="mt-4 text-lg font-medium">Service Area Map</div>
-                  <div className="text-sm">Coming Soon</div>
-                </div>
-              </div>
+            <div className="relative aspect-square overflow-hidden rounded-lg lg:aspect-auto lg:min-h-[400px]">
+              <iframe
+                src="https://www.google.com/maps?q=Atlas+Mitigation,+1720+Mars+Hill+Rd,+Acworth,+GA+30101&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Atlas Mitigation Service Area - Metro Atlanta"
+              />
             </div>
           </div>
         </div>

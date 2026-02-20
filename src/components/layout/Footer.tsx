@@ -1,6 +1,8 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin } from "lucide-react"
+import { YelpIcon } from "@/components/ui/yelp-icon"
+import { NextdoorIcon } from "@/components/ui/nextdoor-icon"
 
 const services = [
   { name: "Water Damage Restoration", href: "/services/water-damage-restoration" },
@@ -40,7 +42,7 @@ export function Footer() {
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 sm:py-4">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <div className="text-center sm:text-left">
-              <p className="text-lg font-bold">24/7 Emergency Service Available</p>
+              <p className="text-lg font-bold">Emergency Service Available</p>
               <p className="text-sm opacity-90">Fast response when disaster strikes</p>
             </div>
             <a
@@ -101,7 +103,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-3 text-gray-300 py-2">
                 <Clock className="h-5 w-5 text-atlas-accent" />
-                <span>24/7 Emergency Service</span>
+                <span>Emergency Service</span>
               </div>
             </div>
           </div>
@@ -169,11 +171,31 @@ export function Footer() {
               <h4 className="text-sm font-semibold mb-3">Follow Us</h4>
               <div className="flex gap-4">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/profile.php?id=61587378351930"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
                   aria-label="Facebook"
                 >
                   <Facebook className="h-6 w-6" />
+                </a>
+                <a
+                  href="https://nextdoor.com/pages/atlas-mitigation/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+                  aria-label="Nextdoor"
+                >
+                  <NextdoorIcon className="h-6 w-6" />
+                </a>
+                <a
+                  href="https://www.yelp.com/biz/atlas-mitigation-acworth"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+                  aria-label="Yelp"
+                >
+                  <YelpIcon className="h-6 w-6" />
                 </a>
                 <a
                   href="#"
