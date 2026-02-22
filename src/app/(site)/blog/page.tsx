@@ -10,6 +10,9 @@ import {
 } from "@/lib/sanity/fetch-with-fallback"
 import { BlogListClient } from "./blog-list-client"
 
+// Revalidate blog listing every 60 seconds so new posts appear without redeploying
+export const revalidate = 60
+
 export const metadata: Metadata = {
   title: "Restoration Tips & Guides Blog | Atlas Mitigation Atlanta GA",
   description:

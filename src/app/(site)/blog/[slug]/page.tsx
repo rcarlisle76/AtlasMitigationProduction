@@ -13,6 +13,9 @@ import {
 } from "@/data/blog-posts"
 import { getBlogPostBySlug } from "@/lib/sanity/fetch-with-fallback"
 import { ArticleSchema } from "@/components/seo"
+
+// Revalidate blog posts every 60 seconds so edits appear without redeploying
+export const revalidate = 60
 import { PortableText } from "@/components/sanity/PortableText"
 import { InstagramEmbed } from "@/components/blog/InstagramEmbed"
 
