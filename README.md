@@ -155,10 +155,11 @@ The 360° virtual tour feature allows clients to explore restoration projects in
 - **Display:** The gallery page shows clickable thumbnails; clicking navigates to `/gallery/360/[id]`
 - **Viewer:** `PanoramaViewer` component uses `react-photo-sphere-viewer` for pan/zoom interaction
 - **Fullscreen:** Built-in fullscreen toggle for immersive viewing
+- **Error handling:** React error boundary catches load failures and shows a friendly retry UI
 
 ### Key files
 
-- `src/components/gallery/PanoramaViewer.tsx` — Viewer component
+- `src/components/gallery/PanoramaViewer.tsx` — Viewer component with error boundary
 - `sanity/schemas/panoramaImage.ts` — Sanity schema
 - `src/app/(site)/gallery/360/[id]/page.tsx` — Dedicated viewer page
 - `src/data/gallery.ts` — `PanoramaImage` type and fallback data
@@ -171,7 +172,7 @@ The 360° virtual tour feature allows clients to explore restoration projects in
 | `Footer` | `src/components/layout/Footer.tsx` | Site footer |
 | `MobileCallButton` | `src/components/layout/MobileCallButton.tsx` | Sticky call button on mobile |
 | `BeforeAfterSlider` | `src/components/gallery/BeforeAfterSlider.tsx` | Interactive before/after comparison slider |
-| `PanoramaViewer` | `src/components/gallery/PanoramaViewer.tsx` | 360° photo sphere viewer |
+| `PanoramaViewer` | `src/components/gallery/PanoramaViewer.tsx` | 360° photo sphere viewer with error boundary and retry |
 
 ## Scripts
 

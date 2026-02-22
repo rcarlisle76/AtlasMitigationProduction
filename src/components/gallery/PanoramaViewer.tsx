@@ -1,8 +1,8 @@
 "use client"
 
 import dynamic from "next/dynamic"
-import { useState } from "react"
-import { Maximize2, X, Move } from "lucide-react"
+import { useState, Component, type ReactNode } from "react"
+import { Maximize2, X, Move, RefreshCw, AlertTriangle } from "lucide-react"
 
 const ReactPhotoSphereViewer = dynamic(
   () =>
@@ -22,6 +22,46 @@ const ReactPhotoSphereViewer = dynamic(
   }
 )
 
+// Error boundary to catch react-photo-sphere-viewer render errors
+class PanoramaErrorBoundary extends Component<
+  { children: ReactNode; onRetry: () => void },
+  { hasError: boolean }
+> {
+  constructor(props: { children: ReactNode; onRetry: () => void }) {
+    super(props)
+    this.state = { hasError: false }
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="flex h-full items-center justify-center bg-muted">
+          <div className="text-center text-muted-foreground px-4">
+            <AlertTriangle className="mx-auto mb-3 h-10 w-10 text-amber-500" />
+            <p className="text-sm font-medium">Unable to load the 360° panorama</p>
+            <p className="mt-1 text-xs">The image may still be loading. Please try again.</p>
+            <button
+              onClick={() => {
+                this.setState({ hasError: false })
+                this.props.onRetry()
+              }}
+              className="mt-4 inline-flex items-center gap-2 rounded-lg bg-atlas-primary px-4 py-2 text-sm font-medium text-white hover:bg-atlas-primary/90 transition-colors"
+            >
+              <RefreshCw className="h-4 w-4" />
+              Retry
+            </button>
+          </div>
+        </div>
+      )
+    }
+    return this.props.children
+  }
+}
+
 interface PanoramaViewerProps {
   src: string
   caption?: string
@@ -30,18 +70,25 @@ interface PanoramaViewerProps {
 
 export function PanoramaViewer({ src, caption, className = "" }: PanoramaViewerProps) {
   const [isFullscreen, setIsFullscreen] = useState(false)
+  const [viewerKey, setViewerKey] = useState(0)
+
+  const handleRetry = () => {
+    setViewerKey((k) => k + 1)
+  }
 
   const viewer = (
-    <ReactPhotoSphereViewer
-      src={src}
-      height="100%"
-      width="100%"
-      containerClass="panorama-container"
-      navbar={["zoom", "fullscreen"]}
-      defaultZoomLvl={50}
-      touchmoveTwoFingers={false}
-      mousewheelCtrlKey={false}
-    />
+    <PanoramaErrorBoundary key={viewerKey} onRetry={handleRetry}>
+      <ReactPhotoSphereViewer
+        src={src}
+        height="100%"
+        width="100%"
+        containerClass="panorama-container"
+        navbar={["zoom", "fullscreen"]}
+        defaultZoomLvl={50}
+        touchmoveTwoFingers={false}
+        mousewheelCtrlKey={false}
+      />
+    </PanoramaErrorBoundary>
   )
 
   return (
@@ -91,16 +138,18 @@ export function PanoramaViewer({ src, caption, className = "" }: PanoramaViewerP
             </button>
           </div>
           <div className="flex-1">
-            <ReactPhotoSphereViewer
-              src={src}
-              height="100%"
-              width="100%"
-              containerClass="panorama-container-fullscreen"
-              navbar={["zoom", "fullscreen"]}
-              defaultZoomLvl={50}
-              touchmoveTwoFingers={false}
-              mousewheelCtrlKey={false}
-            />
+            <PanoramaErrorBoundary key={`fs-${viewerKey}`} onRetry={handleRetry}>
+              <ReactPhotoSphereViewer
+                src={src}
+                height="100%"
+                width="100%"
+                containerClass="panorama-container-fullscreen"
+                navbar={["zoom", "fullscreen"]}
+                defaultZoomLvl={50}
+                touchmoveTwoFingers={false}
+                mousewheelCtrlKey={false}
+              />
+            </PanoramaErrorBoundary>
           </div>
         </div>
       )}
