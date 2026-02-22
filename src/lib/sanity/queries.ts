@@ -226,7 +226,9 @@ export const allBlogPostsQuery = groq`
     excerpt,
     featuredImage,
     category,
-    featured
+    featured,
+    postType,
+    instagramUrl
   }
 `
 
@@ -241,6 +243,8 @@ export const blogPostBySlugQuery = groq`
     content,
     featuredImage,
     category,
+    postType,
+    instagramUrl,
     relatedServices[]-> {
       _id,
       title,
@@ -265,7 +269,9 @@ export const recentBlogPostsQuery = groq`
     publishedAt,
     excerpt,
     featuredImage,
-    category
+    category,
+    postType,
+    instagramUrl
   }
 `
 

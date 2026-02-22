@@ -13,6 +13,35 @@ export const blogPost = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "postType",
+      title: "Post Type",
+      type: "string",
+      options: {
+        list: [
+          { title: "Article", value: "article" },
+          { title: "Vlog", value: "vlog" },
+        ],
+        layout: "radio",
+      },
+      initialValue: "article",
+      description: "Choose whether this is a written article or a video blog (vlog)",
+    }),
+    defineField({
+      name: "instagramUrl",
+      title: "Instagram Video URL",
+      type: "url",
+      description: "Paste the Instagram Reel or Post URL (e.g., https://www.instagram.com/reel/ABC123/)",
+      hidden: ({ parent }) => parent?.postType !== "vlog",
+      validation: (Rule) =>
+        Rule.uri({ scheme: ["https"] }).custom((url, context) => {
+          const parent = context.parent as { postType?: string }
+          if (parent?.postType === "vlog" && !url) {
+            return "Instagram URL is required for vlogs"
+          }
+          return true
+        }),
+    }),
+    defineField({
       name: "slug",
       title: "URL Slug",
       type: "slug",
@@ -140,14 +169,15 @@ export const blogPost = defineType({
       publishedAt: "publishedAt",
       featured: "featured",
       media: "featuredImage",
+      postType: "postType",
     },
-    prepare({ title, category, publishedAt, featured, media }) {
+    prepare({ title, category, publishedAt, featured, media, postType }) {
       const date = publishedAt
         ? new Date(publishedAt).toLocaleDateString()
         : "No date"
       return {
         title: title,
-        subtitle: `${category || "Uncategorized"} | ${date}${featured ? " - Featured" : ""}`,
+        subtitle: `${postType === "vlog" ? "🎬 Vlog" : "📝 Article"} | ${category || "Uncategorized"} | ${date}${featured ? " ⭐ Featured" : ""}`,
         media: media,
       }
     },

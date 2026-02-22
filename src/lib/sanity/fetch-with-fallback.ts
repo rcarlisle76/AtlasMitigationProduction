@@ -11,7 +11,7 @@ import {
 } from "./queries"
 
 // Import local data as fallbacks
-import { blogPosts, getRecentPosts, defaultAuthor, type BlogPost, type BlogAuthor } from "@/data/blog-posts"
+import { blogPosts, getRecentPosts, defaultAuthor, type BlogPost, type BlogAuthor, type PostType } from "@/data/blog-posts"
 import { galleryProjects, fallbackPanoramaImages, type GalleryProject, type PanoramaImage } from "@/data/gallery"
 import { testimonials, type Testimonial } from "@/data/testimonials"
 
@@ -200,11 +200,15 @@ function transformSanityBlogPost(sanityPost: any): BlogPost {
         }
     : defaultAuthor
 
+  const postType: PostType = sanityPost.postType === "vlog" ? "vlog" : "article"
+
   return {
     slug: sanityPost.slug?.current || sanityPost.slug,
     title: sanityPost.title,
     excerpt: sanityPost.excerpt || "",
     category: mappedCategory,
+    postType,
+    instagramUrl: sanityPost.instagramUrl || undefined,
     author,
     datePublished: sanityPost.publishedAt
       ? new Date(sanityPost.publishedAt).toISOString().split("T")[0]

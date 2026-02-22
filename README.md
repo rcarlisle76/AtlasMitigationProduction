@@ -76,7 +76,7 @@ atlas-mitigation/
 │       ├── location.ts        # Service area locations
 │       ├── galleryItem.ts     # Before/after gallery projects
 │       ├── panoramaImage.ts   # 360° panorama images
-│       ├── blogPost.ts        # Blog articles
+│       ├── blogPost.ts        # Blog articles and vlogs
 │       ├── testimonial.ts     # Customer reviews
 │       ├── siteSettings.ts    # Global site settings (singleton)
 │       └── index.ts           # Schema registry
@@ -104,8 +104,8 @@ atlas-mitigation/
 | `/locations/[city]` | Individual location page |
 | `/gallery` | Before/after gallery + 360° tour thumbnails |
 | `/gallery/360/[id]` | Individual 360° panorama viewer page |
-| `/blog` | Blog listing |
-| `/blog/[slug]` | Individual blog post |
+| `/blog` | Blog listing with article/vlog filtering |
+| `/blog/[slug]` | Individual blog post or vlog |
 | `/testimonials` | Customer testimonials |
 | `/contact` | Contact form |
 | `/studio` | Sanity CMS Studio (admin) |
@@ -121,7 +121,7 @@ The Sanity Studio at `/studio` is organized into:
 - **Service Locations** — Metro Atlanta service areas
 - **Before/After Gallery** — Before/after image pairs with project details
 - **360° Tours** — Equirectangular 360° panorama images from Encircle
-- **Blog Posts** — Articles and guides
+- **Blog Posts** — Articles and vlogs (supports Instagram Reel embeds)
 - **Testimonials** — Customer reviews and ratings
 
 ### Schemas
@@ -132,7 +132,7 @@ The Sanity Studio at `/studio` is organized into:
 | `location` | Document | Service areas with neighborhoods and zip codes |
 | `galleryItem` | Document | Before/after image pairs with stats |
 | `panoramaImage` | Document | 360° panorama images with service/location refs |
-| `blogPost` | Document | Blog articles with portable text content |
+| `blogPost` | Document | Blog articles and vlogs with portable text content and optional Instagram embeds |
 | `testimonial` | Document | Customer reviews with ratings and sources |
 | `siteSettings` | Document | Singleton for global config (contact, hours, SEO) |
 
@@ -164,10 +164,31 @@ The 360° virtual tour feature allows clients to explore restoration projects in
 - `src/app/(site)/gallery/360/[id]/page.tsx` — Dedicated viewer page
 - `src/data/gallery.ts` — `PanoramaImage` type and fallback data
 
+## Vlog Feature
+
+Blog posts support a "Vlog" post type that embeds Instagram Reels directly into the page.
+
+### How it works
+
+- **Create:** In Sanity Studio, create a new Blog Post and set Post Type to "Vlog"
+- **Embed:** Paste the Instagram Reel URL (e.g., `https://www.instagram.com/reel/ABC123/`)
+- **Content:** Add written content below the embed for SEO (summaries, descriptions, transcripts)
+- **Display:** The blog listing page shows vlogs with a "Vlog" badge; the post page renders the Instagram embed above the body text
+- **SEO:** VideoObject structured data is automatically added for vlog posts
+- **Filtering:** The blog listing page has "All / Articles / Vlogs" tabs for filtering
+
+### Key files
+
+- `src/components/blog/InstagramEmbed.tsx` — Client-side Instagram embed component
+- `sanity/schemas/blogPost.ts` — Schema with `postType` and `instagramUrl` fields
+- `src/app/(site)/blog/blog-list-client.tsx` — Client component for post type and category filtering
+- `src/app/(site)/blog/[slug]/page.tsx` — Vlog post page with embed and VideoObject schema
+
 ## Key Components
 
 | Component | Path | Description |
 |-----------|------|-------------|
+| `InstagramEmbed` | `src/components/blog/InstagramEmbed.tsx` | Responsive Instagram Reel/Post embed for vlogs |
 | `Header` | `src/components/layout/Header.tsx` | Site header with navigation |
 | `Footer` | `src/components/layout/Footer.tsx` | Site footer |
 | `MobileCallButton` | `src/components/layout/MobileCallButton.tsx` | Sticky call button on mobile |

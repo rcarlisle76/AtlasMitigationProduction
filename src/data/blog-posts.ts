@@ -12,12 +12,16 @@ export interface BlogAuthor {
   image?: string
 }
 
+export type PostType = "article" | "vlog"
+
 export interface BlogPost {
   slug: string
   title: string
   excerpt: string
   content: string | any[] // string for local data, array for Sanity portable text
   category: BlogCategory
+  postType: PostType
+  instagramUrl?: string
   featuredImage?: string
   datePublished: string
   dateModified?: string
@@ -67,6 +71,7 @@ export const defaultAuthor: BlogAuthor = {
 export const blogPosts: BlogPost[] = [
   {
     slug: "what-to-do-immediately-after-water-damage",
+    postType: "article",
     title: "What to Do Immediately After Water Damage: Emergency Response Guide",
     excerpt:
       "Discover the critical first steps to take after water damage strikes your home. Learn how to protect your family, minimize damage, and document everything for insurance claims.",
@@ -190,6 +195,7 @@ Atlas Mitigation has served the Acworth and Atlanta communities for years, respo
   },
   {
     slug: "how-long-does-water-damage-restoration-take",
+    postType: "article",
     title: "How Long Does Water Damage Restoration Actually Take?",
     excerpt:
       "Understanding the timeline for water damage restoration helps you plan and set realistic expectations for your property recovery.",
@@ -458,6 +464,7 @@ The sooner we start, the sooner you'll have your home back.`,
   },
   {
     slug: "understanding-water-damage-categories",
+    postType: "article",
     title: "Understanding the Three Categories of Water Damage",
     excerpt:
       "Not all water damage is the same. Learn the difference between clean water, gray water, and black water damage.",
@@ -724,6 +731,7 @@ Our rapid response prevents category escalation, minimizes damage extent, protec
   },
   {
     slug: "preventing-mold-after-water-damage",
+    postType: "article",
     title: "How to Prevent Mold Growth After Water Damage",
     excerpt:
       "Mold can begin growing within 24-48 hours of water damage. Learn how to prevent mold and what to watch for.",
@@ -1017,6 +1025,7 @@ The cost of prevention is always less than remediation. The time for mold preven
   },
   {
     slug: "signs-you-need-professional-mold-remediation",
+    postType: "article",
     title: "5 Signs You Need Professional Mold Remediation",
     excerpt:
       "DIY mold removal isn't always safe or effective. Learn when it's time to call professional mold remediation specialists.",
@@ -1299,6 +1308,7 @@ Most mold situations benefit from professional handling. Don't risk your family'
   },
   {
     slug: "navigating-homeowners-insurance-water-damage-claims",
+    postType: "article",
     title: "Navigating Your Homeowner's Insurance Water Damage Claim",
     excerpt:
       "Understanding what's covered and how to document your claim can make the difference between approval and denial.",

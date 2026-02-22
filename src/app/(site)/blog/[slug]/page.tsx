@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { Calendar, Clock, User, ArrowRight, Phone, Share2 } from "lucide-react"
+import { Calendar, Clock, User, ArrowRight, Phone, Share2, Video } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -14,6 +14,7 @@ import {
 import { getBlogPostBySlug } from "@/lib/sanity/fetch-with-fallback"
 import { ArticleSchema } from "@/components/seo"
 import { PortableText } from "@/components/sanity/PortableText"
+import { InstagramEmbed } from "@/components/blog/InstagramEmbed"
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>
@@ -128,6 +129,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         author={post.author.name}
       />
 
+      {post.postType === "vlog" && post.instagramUrl && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "VideoObject",
+              name: post.title,
+              description: post.excerpt,
+              uploadDate: post.datePublished,
+              embedUrl: post.instagramUrl,
+            }),
+          }}
+        />
+      )}
+
       {/* Hero Section */}
       <section className="bg-secondary py-12 sm:py-16">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -145,9 +162,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </nav>
 
           {/* Category Badge */}
-          <Badge className={categoryInfo.color} variant="outline">
-            {categoryInfo.label}
-          </Badge>
+          <div className="flex items-center gap-2">
+            <Badge className={categoryInfo.color} variant="outline">
+              {categoryInfo.label}
+            </Badge>
+            {post.postType === "vlog" && (
+              <Badge className="border-atlas-primary bg-atlas-primary/10 text-atlas-primary" variant="outline">
+                <Video className="mr-1 h-3 w-3" />
+                Vlog
+              </Badge>
+            )}
+          </div>
 
           {/* Title */}
           <h1 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
@@ -201,6 +226,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="grid gap-12 lg:grid-cols-12">
             {/* Article Content */}
             <article className="lg:col-span-8">
+              {post.postType === "vlog" && post.instagramUrl && (
+                <div className="mb-8">
+                  <InstagramEmbed url={post.instagramUrl} />
+                </div>
+              )}
               {isPortableText ? (
                 <PortableText value={post.content as any[]} />
               ) : (
