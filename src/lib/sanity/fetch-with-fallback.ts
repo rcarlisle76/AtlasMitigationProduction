@@ -4,13 +4,15 @@ import {
   blogPostBySlugQuery,
   recentBlogPostsQuery,
   allGalleryItemsQuery,
+  allPanoramaImagesQuery,
+  panoramaImageByIdQuery,
   allTestimonialsQuery,
   featuredTestimonialsQuery,
 } from "./queries"
 
 // Import local data as fallbacks
 import { blogPosts, getRecentPosts, defaultAuthor, type BlogPost, type BlogAuthor } from "@/data/blog-posts"
-import { galleryProjects, type GalleryProject } from "@/data/gallery"
+import { galleryProjects, fallbackPanoramaImages, type GalleryProject, type PanoramaImage } from "@/data/gallery"
 import { testimonials, type Testimonial } from "@/data/testimonials"
 
 // Check if Sanity is configured
@@ -89,6 +91,44 @@ export async function getAllGalleryItems(): Promise<GalleryProject[]> {
   } catch (error) {
     console.warn("Failed to fetch from Sanity, using local data:", error)
     return galleryProjects
+  }
+}
+
+// Panorama Images
+export async function getAllPanoramaImages(): Promise<PanoramaImage[]> {
+  if (!isSanityConfigured()) {
+    return fallbackPanoramaImages
+  }
+
+  try {
+    const sanityItems = await client.fetch(allPanoramaImagesQuery)
+    if (sanityItems && sanityItems.length > 0) {
+      return sanityItems.map(transformSanityPanoramaImage)
+    }
+    return fallbackPanoramaImages
+  } catch (error) {
+    console.warn("Failed to fetch panorama images from Sanity, using fallback:", error)
+    return fallbackPanoramaImages
+  }
+}
+
+export async function getPanoramaImageById(id: string): Promise<PanoramaImage | null> {
+  // Check fallback first
+  const fallback = fallbackPanoramaImages.find((p) => p.id === id)
+
+  if (!isSanityConfigured()) {
+    return fallback || null
+  }
+
+  try {
+    const sanityItem = await client.fetch(panoramaImageByIdQuery, { id })
+    if (sanityItem) {
+      return transformSanityPanoramaImage(sanityItem)
+    }
+    return fallback || null
+  } catch (error) {
+    console.warn("Failed to fetch panorama image from Sanity, using fallback:", error)
+    return fallback || null
   }
 }
 
@@ -257,6 +297,31 @@ function transformSanityTestimonial(sanityTestimonial: any): Testimonial {
     datePublished: sanityTestimonial.date
       ? new Date(sanityTestimonial.date).toISOString().split("T")[0]
       : new Date().toISOString().split("T")[0],
+  }
+}
+
+function transformSanityPanoramaImage(sanityItem: any): PanoramaImage {
+  const panoramaUrl = sanityItem.panoramaImage?.asset
+    ? urlFor(sanityItem.panoramaImage).url()
+    : "/gallery/360-sample.jpg"
+
+  const thumbnailUrl = sanityItem.thumbnail?.asset
+    ? urlFor(sanityItem.thumbnail).width(600).height(400).url()
+    : sanityItem.panoramaImage?.asset
+      ? urlFor(sanityItem.panoramaImage).width(600).height(400).url()
+      : "/gallery/360-sample.jpg"
+
+  return {
+    id: sanityItem._id,
+    title: sanityItem.title,
+    panoramaImageUrl: panoramaUrl,
+    thumbnailUrl: thumbnailUrl,
+    caption: sanityItem.caption || undefined,
+    serviceTitle: sanityItem.service?.title || undefined,
+    locationCity: sanityItem.location?.city || undefined,
+    description: sanityItem.description || undefined,
+    featured: sanityItem.featured || false,
+    captureDate: sanityItem.captureDate || undefined,
   }
 }
 

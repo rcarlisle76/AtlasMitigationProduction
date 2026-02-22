@@ -309,6 +309,36 @@ export const galleryProjects: GalleryProject[] = [
   },
 ]
 
+export interface PanoramaImage {
+  id: string
+  title: string
+  panoramaImageUrl: string
+  thumbnailUrl: string
+  caption?: string
+  serviceTitle?: string
+  locationCity?: string
+  description?: string
+  featured: boolean
+  captureDate?: string
+}
+
+export const fallbackPanoramaImages: PanoramaImage[] = [
+  {
+    id: "sample-360-1",
+    title: "Water Damage Restoration In Progress",
+    panoramaImageUrl: "/gallery/360-sample.jpg",
+    thumbnailUrl: "/gallery/360-sample.jpg",
+    caption:
+      "Water Damage Restoration In Progress — Containment & Drying Equipment Setup",
+    serviceTitle: "Water Damage",
+    locationCity: "Acworth",
+    description:
+      "360° view of an active water damage restoration showing containment barriers and industrial drying equipment in place.",
+    featured: true,
+    captureDate: "2024-03-15",
+  },
+]
+
 export function getProjectBySlug(slug: string): GalleryProject | undefined {
   return galleryProjects.find((p) => p.slug === slug)
 }

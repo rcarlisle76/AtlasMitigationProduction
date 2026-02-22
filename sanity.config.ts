@@ -40,6 +40,7 @@ export default defineConfig({
             S.divider(),
             // Gallery
             S.documentTypeListItem("galleryItem").title("Before/After Gallery"),
+            S.documentTypeListItem("panoramaImage").title("360° Tours"),
             // Blog
             S.documentTypeListItem("blogPost").title("Blog Posts"),
             // Testimonials

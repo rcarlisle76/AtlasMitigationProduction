@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { BeforeAfterSlider } from "@/components/gallery/BeforeAfterSlider"
 import { type GalleryProject } from "@/data/gallery"
+import { type PanoramaImage } from "@/data/gallery"
 
 const serviceTypeLabels: Record<string, string> = {
   all: "All Projects",
@@ -32,9 +33,10 @@ const serviceTypeColors: Record<
 
 interface GalleryPageClientProps {
   projects: GalleryProject[]
+  panoramaImages: PanoramaImage[]
 }
 
-export default function GalleryPageClient({ projects }: GalleryPageClientProps) {
+export default function GalleryPageClient({ projects, panoramaImages }: GalleryPageClientProps) {
   const [selectedFilter, setSelectedFilter] = useState<string>("all")
   const [selectedProject, setSelectedProject] = useState<GalleryProject | null>(
     null
@@ -251,6 +253,77 @@ export default function GalleryPageClient({ projects }: GalleryPageClientProps) 
                   </div>
                 </CardContent>
               </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 360° Virtual Tours Section */}
+      <section className="bg-secondary py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <Badge className="mb-4 bg-atlas-primary">Interactive</Badge>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              360° Virtual Tours
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+              Explore our restoration projects in immersive 360°. Click and drag
+              to look around and see the full scope of our work.
+            </p>
+          </div>
+
+          {/* Panorama Thumbnail Grid */}
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {panoramaImages.map((pano) => (
+              <Link
+                key={pano.id}
+                href={`/gallery/360/${pano.id}`}
+                className="group rounded-lg focus:outline-none focus:ring-2 focus:ring-atlas-primary focus:ring-offset-2"
+              >
+                <div className="relative aspect-video overflow-hidden rounded-lg bg-muted">
+                  <Image
+                    src={pano.thumbnailUrl}
+                    alt={pano.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  {/* 360° Badge */}
+                  <div className="absolute left-3 top-3 flex items-center gap-1 rounded-full bg-atlas-primary px-3 py-1 text-xs font-bold text-white shadow-lg">
+                    <span>360°</span>
+                  </div>
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
+                    <div className="text-center text-white">
+                      <div className="text-sm font-semibold">
+                        Open 360° tour
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-3">
+                  <h3 className="font-semibold leading-tight">
+                    {pano.title}
+                  </h3>
+                  <div className="mt-1 flex flex-wrap items-center gap-2">
+                    {pano.serviceTitle && (
+                      <Badge variant="secondary" className="text-xs">
+                        {pano.serviceTitle}
+                      </Badge>
+                    )}
+                    {pano.locationCity && (
+                      <span className="text-xs text-muted-foreground">
+                        {pano.locationCity}, GA
+                      </span>
+                    )}
+                  </div>
+                  {pano.caption && (
+                    <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
+                      {pano.caption}
+                    </p>
+                  )}
+                </div>
+              </Link>
             ))}
           </div>
         </div>

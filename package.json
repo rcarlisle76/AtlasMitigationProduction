@@ -10,6 +10,7 @@
     "validate-schemas": "node scripts/validate-schemas.js"
   },
   "dependencies": {
+    "@photo-sphere-viewer/core": "^5.14.1",
     "@portabletext/react": "^6.0.2",
     "@radix-ui/react-dialog": "^1.1.15",
     "@sanity/image-url": "^2.0.3",
@@ -21,6 +22,7 @@
     "next-sanity": "^12.0.14",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "react-photo-sphere-viewer": "^6.2.3",
     "sanity": "^5.6.0",
     "styled-components": "^6.3.8",
     "tailwind-merge": "^3.4.0"

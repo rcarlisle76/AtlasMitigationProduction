@@ -170,6 +170,51 @@ export const featuredGalleryItemsQuery = groq`
   }
 `
 
+// Panorama Images
+export const allPanoramaImagesQuery = groq`
+  *[_type == "panoramaImage"] | order(featured desc, captureDate desc) {
+    _id,
+    title,
+    panoramaImage,
+    thumbnail,
+    caption,
+    service-> {
+      _id,
+      title,
+      slug
+    },
+    location-> {
+      _id,
+      city
+    },
+    description,
+    featured,
+    captureDate
+  }
+`
+
+export const panoramaImageByIdQuery = groq`
+  *[_type == "panoramaImage" && _id == $id][0] {
+    _id,
+    title,
+    panoramaImage,
+    thumbnail,
+    caption,
+    service-> {
+      _id,
+      title,
+      slug
+    },
+    location-> {
+      _id,
+      city
+    },
+    description,
+    featured,
+    captureDate
+  }
+`
+
 // Blog Posts
 export const allBlogPostsQuery = groq`
   *[_type == "blogPost"] | order(publishedAt desc) {

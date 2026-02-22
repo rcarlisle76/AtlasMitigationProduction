@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import GalleryPageClient from "./gallery-client"
-import { getAllGalleryItems } from "@/lib/sanity/fetch-with-fallback"
+import { getAllGalleryItems, getAllPanoramaImages } from "@/lib/sanity/fetch-with-fallback"
 
 export const metadata: Metadata = {
   title: "Restoration Project Gallery",
@@ -14,6 +14,14 @@ export const metadata: Metadata = {
 }
 
 export default async function GalleryPage() {
-  const galleryProjects = await getAllGalleryItems()
-  return <GalleryPageClient projects={galleryProjects} />
+  const [galleryProjects, panoramaImages] = await Promise.all([
+    getAllGalleryItems(),
+    getAllPanoramaImages(),
+  ])
+  return (
+    <GalleryPageClient
+      projects={galleryProjects}
+      panoramaImages={panoramaImages}
+    />
+  )
 }
