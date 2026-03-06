@@ -441,7 +441,7 @@ export default async function HomePage() {
 
             <div className="relative aspect-square overflow-hidden rounded-lg lg:aspect-auto lg:min-h-[400px]">
               <iframe
-                src="https://www.google.com/maps?q=Atlas+Mitigation,+Acworth,+GA&output=embed"
+                src="https://www.google.com/maps?q=1720+Mars+Hill+Rd,+Acworth,+GA+30101&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

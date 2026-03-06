@@ -1,12 +1,17 @@
 import { ImageResponse } from "next/og"
+import fs from "node:fs"
+import path from "node:path"
 
-export const runtime = "edge"
 export const alt =
   "Atlas Mitigation - Professional Fire & Water Damage Restoration in Metro Atlanta"
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
-export default function OGImage() {
+export default async function OGImage() {
+  const logoPath = path.join(process.cwd(), "public", "logo.png")
+  const logoData = fs.readFileSync(logoPath)
+  const logoBase64 = `data:image/png;base64,${logoData.toString("base64")}`
+
   return new ImageResponse(
     (
       <div
@@ -29,6 +34,14 @@ export default function OGImage() {
             gap: "20px",
           }}
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={logoBase64}
+            width={120}
+            height={120}
+            alt=""
+            style={{ marginBottom: "10px" }}
+          />
           <div
             style={{
               fontSize: "72px",
