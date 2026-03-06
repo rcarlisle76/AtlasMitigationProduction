@@ -1,6 +1,6 @@
 # Atlas Mitigation
 
-Professional property restoration website for Atlas Mitigation, serving metro Atlanta (Acworth, Marietta, Kennesaw, Roswell, and surrounding areas). Features before/after project galleries, 360° virtual tours, blog, testimonials, and a Sanity CMS for content management.
+Professional property restoration website for Atlas Mitigation, serving metro Atlanta (Acworth, Marietta, Kennesaw, Roswell, Decatur, Buckhead, Downtown Atlanta, Conyers, and surrounding areas). Features before/after project galleries, 360° virtual tours, blog with vlog support, testimonials, and a Sanity CMS for content management.
 
 ## Tech Stack
 
@@ -11,6 +11,7 @@ Professional property restoration website for Atlas Mitigation, serving metro At
 - **360° Viewer:** react-photo-sphere-viewer
 - **Language:** TypeScript
 - **Deployment:** Vercel
+- **Domain:** atlasmitigation.com
 
 ## Getting Started
 
@@ -69,7 +70,7 @@ Both scripts require `SANITY_API_TOKEN` in `.env.local`.
 
 ```
 atlas-mitigation/
-├── public/                    # Static assets (images, gallery photos)
+├── public/                    # Static assets (images, gallery photos, logo)
 ├── sanity/
 │   └── schemas/               # Sanity document type schemas
 │       ├── service.ts         # Restoration service types
@@ -84,8 +85,20 @@ atlas-mitigation/
 │   ├── seed-sanity.mjs        # Seed blog, testimonials, gallery
 │   └── seed-panoramas.mjs     # Seed 360° panorama images
 ├── src/
-│   ├── app/(site)/            # All public page routes
-│   ├── components/            # Reusable UI components
+│   ├── app/
+│   │   ├── (site)/            # All public page routes
+│   │   ├── icon.png           # Favicon (32x32)
+│   │   ├── apple-icon.png     # Apple touch icon (180x180)
+│   │   ├── opengraph-image.tsx # Auto-generated OG image with logo
+│   │   ├── sitemap.ts         # Dynamic XML sitemap
+│   │   ├── robots.ts          # Robots.txt configuration
+│   │   └── layout.tsx         # Root layout with metadata
+│   ├── components/
+│   │   ├── seo/               # Structured data (JSON-LD) components
+│   │   ├── gallery/           # Gallery and 360° viewer components
+│   │   ├── blog/              # Blog-specific components
+│   │   ├── layout/            # Header, Footer, MobileCallButton
+│   │   └── ui/                # Shared UI primitives
 │   ├── data/                  # Fallback data (used when Sanity isn't configured)
 │   └── lib/sanity/            # Sanity client, queries, fetch functions
 ├── sanity.config.ts           # Sanity Studio configuration
@@ -109,6 +122,58 @@ atlas-mitigation/
 | `/testimonials` | Customer testimonials |
 | `/contact` | Contact form |
 | `/studio` | Sanity CMS Studio (admin) |
+
+## SEO
+
+### Metadata & Social Sharing
+
+Every page has complete metadata including:
+
+- **Title** — Unique per-page with template pattern `%s | Atlas Mitigation`
+- **Description** — Custom per-page meta descriptions
+- **OpenGraph** — Title, description, type, and auto-generated OG image with company logo
+- **Twitter Cards** — `summary_large_image` cards on all pages
+- **Canonical URLs** — Set on every page to prevent duplicate content
+- **Favicon** — Company logo served as `icon.png` (32x32) and `apple-icon.png` (180x180)
+
+### Structured Data (JSON-LD)
+
+| Schema | Component | Deployed On |
+|--------|-----------|-------------|
+| `LocalBusiness` | `LocalBusinessSchema` | All pages (via site layout) — 15 service areas, 6 services, 24/7 hours |
+| `Service` | `ServiceSchema` | Service detail pages |
+| `HowTo` | `HowToSchema` | Service detail pages — process steps as rich snippets |
+| `FAQ` | `FAQSchema` | Service detail pages |
+| `Article` | `ArticleSchema` | Blog post pages |
+| `VideoObject` | Inline | Vlog blog posts |
+| `BreadcrumbList` | `BreadcrumbSchema` | Service, location, and blog detail pages |
+| `Review` / `AggregateRating` | `ReviewSchema` | Homepage, testimonials page |
+
+### Technical SEO
+
+- **Sitemap** — Dynamic `sitemap.ts` generating 40+ URLs (static pages, services, locations, blog posts, panoramas)
+- **Robots.txt** — Allows all crawlers, disallows `/studio` and `/api/`, references sitemap
+- **ISR** — Blog, gallery, and testimonials pages revalidate every 60 seconds for fresh CMS content
+- **Preconnect** — Links for Sanity CDN, Google Maps API, and Google Maps static assets
+- **Image optimization** — Next.js Image with AVIF/WebP, quality 85%, responsive sizes
+
+### Local SEO
+
+- **NAP consistency** — Name, Address, Phone consistent across all pages
+- **15 service area pages** — Acworth, Marietta, Kennesaw, Woodstock, Canton, Roswell, Alpharetta, Smyrna, Dallas, Decatur, Buckhead, Downtown Atlanta, Conyers (+ Sandy Springs, Atlanta in schema)
+- **Google Maps embeds** — Pinned to exact business address (1720 Mars Hill Rd, Acworth, GA 30101)
+- **Social profiles** — Facebook, Nextdoor, Yelp linked in schema `sameAs` and site footer
+
+### SEO Files
+
+| File | Description |
+|------|-------------|
+| `src/app/sitemap.ts` | Dynamic XML sitemap |
+| `src/app/robots.ts` | Robots.txt |
+| `src/app/opengraph-image.tsx` | Auto-generated OG image (1200x630) with company logo |
+| `src/app/icon.png` | Favicon (32x32) |
+| `src/app/apple-icon.png` | Apple touch icon (180x180) |
+| `src/components/seo/` | All structured data components |
 
 ## Sanity CMS
 
@@ -190,10 +255,12 @@ Blog posts support a "Vlog" post type that embeds Instagram Reels directly into 
 |-----------|------|-------------|
 | `InstagramEmbed` | `src/components/blog/InstagramEmbed.tsx` | Responsive Instagram Reel/Post embed for vlogs |
 | `Header` | `src/components/layout/Header.tsx` | Site header with navigation |
-| `Footer` | `src/components/layout/Footer.tsx` | Site footer |
+| `Footer` | `src/components/layout/Footer.tsx` | Site footer with social links (Facebook, Nextdoor, Yelp) |
 | `MobileCallButton` | `src/components/layout/MobileCallButton.tsx` | Sticky call button on mobile |
 | `BeforeAfterSlider` | `src/components/gallery/BeforeAfterSlider.tsx` | Interactive before/after comparison slider |
 | `PanoramaViewer` | `src/components/gallery/PanoramaViewer.tsx` | 360° photo sphere viewer with error boundary and retry |
+| `YelpIcon` | `src/components/ui/yelp-icon.tsx` | Yelp brand icon |
+| `NextdoorIcon` | `src/components/ui/nextdoor-icon.tsx` | Nextdoor brand icon |
 
 ## Scripts
 
@@ -209,10 +276,18 @@ Blog posts support a "Vlog" post type that embeds Instagram Reels directly into 
 
 ## Deployment
 
-The project is configured for deployment on Vercel:
+The project is deployed on Vercel at `atlasmitigation.com`:
 
 ```bash
 npm run build
 ```
 
-Static pages are pre-rendered at build time. Dynamic routes (`/blog`, `/studio`) are server-rendered on demand. The Sanity Studio is embedded and accessible at `/studio` in production.
+Static pages are pre-rendered at build time. Dynamic routes (`/blog`, `/gallery`, `/testimonials`) use ISR with 60-second revalidation. The Sanity Studio is embedded and accessible at `/studio` in production.
+
+### Google Maps
+
+All embedded Google Maps iframes use the exact business address (`1720 Mars Hill Rd, Acworth, GA 30101`) to avoid displaying competitor businesses in search results.
+
+### Google Business Profile
+
+To appear in Google's local business results (map pack), set up a Google Business Profile at https://business.google.com with matching NAP data. Once verified, add the Google Search Console verification code to `src/app/layout.tsx` under `verification.google`.
