@@ -14,6 +14,12 @@ export const metadata: Metadata = {
     description:
       "Complete fire, water, mold, and storm damage restoration services in metro Atlanta. 24/7 emergency response.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Restoration Services | Atlas Mitigation",
+    description:
+      "Complete fire, water, mold, and storm damage restoration services in metro Atlanta. 24/7 emergency response.",
+  },
   alternates: {
     canonical: "/services",
   },

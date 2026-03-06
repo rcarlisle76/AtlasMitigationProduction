@@ -15,6 +15,12 @@ export const metadata: Metadata = {
     description:
       "Professional restoration services throughout metro Atlanta. 24/7 emergency response.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Service Areas | Atlas Mitigation",
+    description:
+      "Professional restoration services throughout metro Atlanta. 24/7 emergency response.",
+  },
   alternates: {
     canonical: "/locations",
   },

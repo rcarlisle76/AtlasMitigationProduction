@@ -20,6 +20,12 @@ export const metadata: Metadata = {
     description:
       "24/7 emergency restoration. Contact us for fire, water, and mold damage restoration.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | Atlas Mitigation",
+    description:
+      "24/7 emergency restoration. Contact us for fire, water, and mold damage restoration.",
+  },
   alternates: {
     canonical: "/contact",
   },

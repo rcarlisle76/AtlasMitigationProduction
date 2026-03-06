@@ -52,6 +52,12 @@ const defaultBusinessInfo: LocalBusinessSchemaProps = {
     "Alpharetta",
     "Sandy Springs",
     "Atlanta",
+    "Smyrna",
+    "Decatur",
+    "Buckhead",
+    "Downtown Atlanta",
+    "Conyers",
+    "Dallas",
   ],
   url: "https://atlasmitigation.com",
 }
@@ -103,9 +109,9 @@ export function LocalBusinessSchema(props: LocalBusinessSchemaProps = {}) {
       "@id": `${data.url}/locations/${area.toLowerCase().replace(/\s+/g, "-")}`,
     })),
     sameAs: [
-      "https://www.facebook.com/atlasmitigation",
-      "https://www.instagram.com/atlasmitigation",
-      "https://www.linkedin.com/company/atlasmitigation",
+      "https://www.facebook.com/profile.php?id=61587378351930",
+      "https://www.yelp.com/biz/atlas-mitigation-acworth",
+      "https://nextdoor.com/pages/atlas-mitigation/",
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",

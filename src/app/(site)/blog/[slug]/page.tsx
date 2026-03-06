@@ -52,6 +52,11 @@ export async function generateMetadata({
       modifiedTime: post.dateModified || post.datePublished,
       authors: [post.author.name],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: post.metaTitle,
+      description: post.metaDescription,
+    },
     alternates: {
       canonical: `/blog/${slug}`,
     },

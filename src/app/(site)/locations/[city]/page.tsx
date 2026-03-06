@@ -45,6 +45,11 @@ export async function generateMetadata({
       title: location.metaTitle,
       description: location.metaDescription,
     },
+    twitter: {
+      card: "summary_large_image",
+      title: location.metaTitle,
+      description: location.metaDescription,
+    },
     alternates: {
       canonical: `/locations/${city}`,
     },

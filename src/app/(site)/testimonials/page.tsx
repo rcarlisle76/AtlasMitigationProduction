@@ -18,6 +18,12 @@ export const metadata: Metadata = {
     description:
       "Read what our customers say about Atlas Mitigation's restoration services. 5-star rated in metro Atlanta.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Customer Testimonials | Atlas Mitigation",
+    description:
+      "Read what our customers say about Atlas Mitigation's restoration services. 5-star rated in metro Atlanta.",
+  },
   alternates: {
     canonical: "/testimonials",
   },

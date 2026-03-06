@@ -11,7 +11,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { services, getServiceBySlug, getRelatedServices } from "@/data/services"
-import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/seo"
+import { ServiceSchema, FAQSchema, BreadcrumbSchema, HowToSchema } from "@/components/seo"
 
 interface ServicePageProps {
   params: Promise<{ slug: string }>
@@ -42,6 +42,14 @@ export async function generateMetadata({
       title: service.metaTitle,
       description: service.metaDescription,
     },
+    twitter: {
+      card: "summary_large_image",
+      title: service.metaTitle,
+      description: service.metaDescription,
+    },
+    alternates: {
+      canonical: `/services/${slug}`,
+    },
   }
 }
 
@@ -71,6 +79,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <FAQSchema
         faqs={service.faqs}
         pageUrl={`https://atlasmitigation.com/services/${service.slug}`}
+      />
+      <HowToSchema
+        name={`How ${service.title} Works`}
+        description={service.excerpt}
+        steps={service.processSteps}
       />
 
       {/* Hero Section */}

@@ -22,6 +22,12 @@ export const metadata: Metadata = {
     description:
       "Expert tips on water damage, fire restoration, mold prevention, and insurance claims from Atlanta's restoration specialists.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Restoration Tips & Guides Blog | Atlas Mitigation",
+    description:
+      "Expert tips on water damage, fire restoration, mold prevention, and insurance claims from Atlanta's restoration specialists.",
+  },
   alternates: {
     canonical: "/blog",
   },

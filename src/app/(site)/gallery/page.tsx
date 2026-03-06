@@ -13,6 +13,12 @@ export const metadata: Metadata = {
     description:
       "See real before and after results from our restoration projects throughout metro Atlanta. Quality workmanship and complete property restoration.",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Restoration Project Gallery | Atlas Mitigation",
+    description:
+      "See real before and after results from our restoration projects throughout metro Atlanta.",
+  },
   alternates: {
     canonical: "/gallery",
   },
