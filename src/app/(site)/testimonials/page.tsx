@@ -7,6 +7,8 @@ import { getAllTestimonials } from "@/lib/sanity/fetch-with-fallback"
 import { ReviewSchema } from "@/components/seo"
 import { YelpIcon } from "@/components/ui/yelp-icon"
 
+export const revalidate = 60
+
 export const metadata: Metadata = {
   title: "Customer Testimonials | Atlas Mitigation",
   description:
@@ -15,6 +17,9 @@ export const metadata: Metadata = {
     title: "Customer Testimonials | Atlas Mitigation",
     description:
       "Read what our customers say about Atlas Mitigation's restoration services. 5-star rated in metro Atlanta.",
+  },
+  alternates: {
+    canonical: "/testimonials",
   },
 }
 

@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     description:
       "Complete fire, water, mold, and storm damage restoration services in metro Atlanta. 24/7 emergency response.",
   },
+  alternates: {
+    canonical: "/services",
+  },
 }
 
 export default function ServicesPage() {

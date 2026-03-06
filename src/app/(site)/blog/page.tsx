@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     description:
       "Expert tips on water damage, fire restoration, mold prevention, and insurance claims from Atlanta's restoration specialists.",
   },
+  alternates: {
+    canonical: "/blog",
+  },
 }
 
 export default async function BlogPage() {

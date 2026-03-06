@@ -11,7 +11,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { services, getServiceBySlug, getRelatedServices } from "@/data/services"
-import { ServiceSchema, FAQSchema } from "@/components/seo"
+import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/seo"
 
 interface ServicePageProps {
   params: Promise<{ slug: string }>
@@ -57,6 +57,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "/" },
+        { name: "Services", href: "/services" },
+        { name: service.title, href: `/services/${service.slug}` },
+      ]} />
       <ServiceSchema
         name={service.title}
         description={service.excerpt}

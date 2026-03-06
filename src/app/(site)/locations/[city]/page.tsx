@@ -14,6 +14,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { locations, getLocationBySlug } from "@/data/locations"
 import { services } from "@/data/services"
+import { BreadcrumbSchema } from "@/components/seo"
 
 interface LocationPageProps {
   params: Promise<{ city: string }>
@@ -44,6 +45,9 @@ export async function generateMetadata({
       title: location.metaTitle,
       description: location.metaDescription,
     },
+    alternates: {
+      canonical: `/locations/${city}`,
+    },
   }
 }
 
@@ -57,6 +61,12 @@ export default async function LocationPage({ params }: LocationPageProps) {
 
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "/" },
+        { name: "Locations", href: "/locations" },
+        { name: `${location.city}, ${location.state}`, href: `/locations/${location.slug}` },
+      ]} />
+
       {/* Hero Section */}
       <section className="bg-atlas-secondary py-16 text-white sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

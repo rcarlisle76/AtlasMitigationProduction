@@ -12,7 +12,7 @@ import {
   blogCategories,
 } from "@/data/blog-posts"
 import { getBlogPostBySlug } from "@/lib/sanity/fetch-with-fallback"
-import { ArticleSchema } from "@/components/seo"
+import { ArticleSchema, BreadcrumbSchema } from "@/components/seo"
 
 // Revalidate blog posts every 60 seconds so edits appear without redeploying
 export const revalidate = 60
@@ -51,6 +51,9 @@ export async function generateMetadata({
       publishedTime: post.datePublished,
       modifiedTime: post.dateModified || post.datePublished,
       authors: [post.author.name],
+    },
+    alternates: {
+      canonical: `/blog/${slug}`,
     },
   }
 }
@@ -123,6 +126,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
+      <BreadcrumbSchema items={[
+        { name: "Home", href: "/" },
+        { name: "Blog", href: "/blog" },
+        { name: post.title, href: `/blog/${post.slug}` },
+      ]} />
       <ArticleSchema
         title={post.title}
         description={post.excerpt}

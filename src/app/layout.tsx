@@ -79,6 +79,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
+      <head>
+        <link rel="preconnect" href="https://cdn.sanity.io" />
+      </head>
       <body className="flex min-h-screen flex-col antialiased font-sans">
         {children}
       </body>

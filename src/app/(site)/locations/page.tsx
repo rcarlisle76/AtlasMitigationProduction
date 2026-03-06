@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     description:
       "Professional restoration services throughout metro Atlanta. 24/7 emergency response.",
   },
+  alternates: {
+    canonical: "/locations",
+  },
 }
 
 export default function LocationsPage() {

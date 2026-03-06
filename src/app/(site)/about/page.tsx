@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     description:
       "Metro Atlanta's trusted fire and water damage restoration experts since 2010.",
   },
+  alternates: {
+    canonical: "/about",
+  },
 }
 
 const values = [

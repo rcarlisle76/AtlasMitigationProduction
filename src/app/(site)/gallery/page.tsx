@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import GalleryPageClient from "./gallery-client"
 import { getAllGalleryItems, getAllPanoramaImages } from "@/lib/sanity/fetch-with-fallback"
 
+export const revalidate = 60
+
 export const metadata: Metadata = {
   title: "Restoration Project Gallery",
   description:
@@ -10,6 +12,9 @@ export const metadata: Metadata = {
     title: "Restoration Project Gallery | Atlas Mitigation",
     description:
       "See real before and after results from our restoration projects throughout metro Atlanta. Quality workmanship and complete property restoration.",
+  },
+  alternates: {
+    canonical: "/gallery",
   },
 }
 
