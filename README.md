@@ -1,6 +1,6 @@
 # Atlas Mitigation
 
-Professional property restoration website for Atlas Mitigation, serving metro Atlanta (Acworth, Marietta, Kennesaw, Roswell, Decatur, Buckhead, Downtown Atlanta, Conyers, and surrounding areas). Features before/after project galleries, 360° virtual tours, blog with vlog support, testimonials, and a Sanity CMS for content management.
+Professional property restoration website for Atlas Mitigation, serving metro Atlanta (Acworth, Marietta, Kennesaw, Roswell, Sandy Springs, Decatur, Buckhead, Downtown Atlanta, Conyers, and surrounding areas). Features before/after project galleries, 360° virtual tours, blog with vlog support, testimonials, and a Sanity CMS for content management.
 
 ## Tech Stack
 
@@ -90,7 +90,7 @@ atlas-mitigation/
 │   │   ├── icon.png           # Favicon (32x32)
 │   │   ├── apple-icon.png     # Apple touch icon (180x180)
 │   │   ├── opengraph-image.tsx # Auto-generated OG image with logo
-│   │   ├── sitemap.ts         # Dynamic XML sitemap
+│   │   ├── sitemap.ts         # Dynamic XML sitemap (filters test content)
 │   │   ├── robots.ts          # Robots.txt configuration
 │   │   └── layout.tsx         # Root layout with metadata
 │   ├── components/
@@ -113,14 +113,14 @@ atlas-mitigation/
 | `/about` | About Atlas Mitigation |
 | `/services` | All restoration services |
 | `/services/[slug]` | Individual service detail page |
-| `/locations` | Service area locations |
+| `/locations` | Service area locations (16 cities) |
 | `/locations/[city]` | Individual location page |
 | `/gallery` | Before/after gallery + 360° tour thumbnails |
 | `/gallery/360/[id]` | Individual 360° panorama viewer page |
 | `/blog` | Blog listing with article/vlog filtering |
 | `/blog/[slug]` | Individual blog post or vlog |
 | `/testimonials` | Customer testimonials |
-| `/contact` | Contact form |
+| `/contact` | Contact form with accessibility labels |
 | `/studio` | Sanity CMS Studio (admin) |
 
 ## SEO
@@ -129,18 +129,18 @@ atlas-mitigation/
 
 Every page has complete metadata including:
 
-- **Title** — Unique per-page with template pattern `%s | Atlas Mitigation`
-- **Description** — Custom per-page meta descriptions
+- **Title** — Unique per-page with template pattern `%s | Atlas Mitigation` (homepage uses absolute title to avoid duplication)
+- **Description** — Custom per-page meta descriptions (all under 155 characters)
 - **OpenGraph** — Title, description, type, and auto-generated OG image with company logo
 - **Twitter Cards** — `summary_large_image` cards on all pages
-- **Canonical URLs** — Set on every page to prevent duplicate content
+- **Canonical URLs** — Set on every page (including dynamic service/location/blog pages) to prevent duplicate content
 - **Favicon** — Company logo served as `icon.png` (32x32) and `apple-icon.png` (180x180)
 
 ### Structured Data (JSON-LD)
 
 | Schema | Component | Deployed On |
 |--------|-----------|-------------|
-| `LocalBusiness` | `LocalBusinessSchema` | All pages (via site layout) — 15 service areas, 6 services, 24/7 hours |
+| `LocalBusiness` | `LocalBusinessSchema` | All pages (via site layout) — 16 service areas, 6 services, 24/7 hours, payment methods, logo, slogan |
 | `Service` | `ServiceSchema` | Service detail pages |
 | `HowTo` | `HowToSchema` | Service detail pages — process steps as rich snippets |
 | `FAQ` | `FAQSchema` | Service detail pages |
@@ -149,26 +149,41 @@ Every page has complete metadata including:
 | `BreadcrumbList` | `BreadcrumbSchema` | Service, location, and blog detail pages |
 | `Review` / `AggregateRating` | `ReviewSchema` | Homepage, testimonials page |
 
+#### LocalBusiness Schema Fields
+
+The `LocalBusinessSchema` includes comprehensive business information:
+
+- Name, description, telephone, email, URL
+- Full postal address with geo coordinates
+- Opening hours (24/7)
+- Price range, payment methods accepted (Cash, Check, Credit Card, Insurance Claims)
+- Logo, slogan ("Atlas holds the World. We restore yours.")
+- 16 service area cities with linked location pages
+- 6 restoration services in offer catalog
+- Social profiles (Facebook, Yelp, Nextdoor)
+- `knowsAbout` expertise areas for knowledge graph
+
 ### Technical SEO
 
-- **Sitemap** — Dynamic `sitemap.ts` generating 40+ URLs (static pages, services, locations, blog posts, panoramas)
+- **Sitemap** — Dynamic `sitemap.ts` generating 41+ URLs (static pages, services, locations, blog posts, panoramas); filters out test content
 - **Robots.txt** — Allows all crawlers, disallows `/studio` and `/api/`, references sitemap
 - **ISR** — Blog, gallery, and testimonials pages revalidate every 60 seconds for fresh CMS content
 - **Preconnect** — Links for Sanity CDN, Google Maps API, and Google Maps static assets
 - **Image optimization** — Next.js Image with AVIF/WebP, quality 85%, responsive sizes
+- **Performance** — 100/100 desktop, 98/100 mobile on PageSpeed Insights; zero CLS
 
 ### Local SEO
 
 - **NAP consistency** — Name, Address, Phone consistent across all pages
-- **15 service area pages** — Acworth, Marietta, Kennesaw, Woodstock, Canton, Roswell, Alpharetta, Smyrna, Dallas, Decatur, Buckhead, Downtown Atlanta, Conyers (+ Sandy Springs, Atlanta in schema)
-- **Google Maps embeds** — Pinned to exact business address (1720 Mars Hill Rd, Acworth, GA 30101)
+- **16 service area pages** — Acworth, Marietta, Kennesaw, Woodstock, Canton, Roswell, Alpharetta, Smyrna, Powder Springs, Dallas, Decatur, Buckhead, Downtown Atlanta, Conyers, Sandy Springs (+ Atlanta in schema)
+- **Google Maps embeds** — Pinned to exact business address (1720 Mars Hill Rd, Acworth, GA 30101) to avoid competitor pins
 - **Social profiles** — Facebook, Nextdoor, Yelp linked in schema `sameAs` and site footer
 
 ### SEO Files
 
 | File | Description |
 |------|-------------|
-| `src/app/sitemap.ts` | Dynamic XML sitemap |
+| `src/app/sitemap.ts` | Dynamic XML sitemap (filters test posts) |
 | `src/app/robots.ts` | Robots.txt |
 | `src/app/opengraph-image.tsx` | Auto-generated OG image (1200x630) with company logo |
 | `src/app/icon.png` | Favicon (32x32) |
@@ -290,4 +305,14 @@ All embedded Google Maps iframes use the exact business address (`1720 Mars Hill
 
 ### Google Business Profile
 
-To appear in Google's local business results (map pack), set up a Google Business Profile at https://business.google.com with matching NAP data. Once verified, add the Google Search Console verification code to `src/app/layout.tsx` under `verification.google`.
+To appear in Google's local business results (map pack), set up a Google Business Profile at https://business.google.com with:
+
+- **Business name:** Atlas Mitigation
+- **Primary category:** Water Damage Restoration Service
+- **Secondary categories:** Fire Damage Restoration Service, Mold Remediation Service
+- **Address:** 1720 Mars Hill Rd, Acworth, GA 30101
+- **Phone:** (404) 808-3677
+- **Website:** https://atlasmitigation.com
+- **Hours:** 24/7
+
+Once verified, add the Google Search Console verification code to `src/app/layout.tsx` under `verification.google`.
