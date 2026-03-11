@@ -10,17 +10,17 @@ import { YelpIcon } from "@/components/ui/yelp-icon"
 export const revalidate = 60
 
 export const metadata: Metadata = {
-  title: "Customer Testimonials | Atlas Mitigation",
+  title: "Customer Testimonials",
   description:
     "Read what our customers say about Atlas Mitigation's water damage, fire damage, and mold remediation services in metro Atlanta. 5-star rated restoration company.",
   openGraph: {
-    title: "Customer Testimonials | Atlas Mitigation",
+    title: "Customer Testimonials",
     description:
       "Read what our customers say about Atlas Mitigation's restoration services. 5-star rated in metro Atlanta.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Customer Testimonials | Atlas Mitigation",
+    title: "Customer Testimonials",
     description:
       "Read what our customers say about Atlas Mitigation's restoration services. 5-star rated in metro Atlanta.",
   },

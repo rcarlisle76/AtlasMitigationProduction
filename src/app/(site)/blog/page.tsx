@@ -14,7 +14,7 @@ import { BlogListClient } from "./blog-list-client"
 export const revalidate = 60
 
 export const metadata: Metadata = {
-  title: "Restoration Tips & Guides Blog | Atlas Mitigation Atlanta GA",
+  title: "Restoration Tips & Guides Blog | Atlanta GA",
   description:
     "Expert tips on water damage, fire restoration, mold prevention, and insurance claims. Professional guidance from Atlanta's restoration specialists.",
   openGraph: {

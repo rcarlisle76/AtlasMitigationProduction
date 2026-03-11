@@ -352,6 +352,31 @@ export const locations: Location[] = [
     metaDescription:
       "Professional water and fire damage restoration in Conyers & Rockdale County, GA. 24/7 emergency response. Certified technicians. Call (404) 808-3677.",
   },
+  {
+    slug: "sandy-springs",
+    city: "Sandy Springs",
+    state: "GA",
+    county: "Fulton County",
+    featured: false,
+    description:
+      "Atlas Mitigation provides expert restoration services to Sandy Springs, Georgia, one of Atlanta's most affluent suburban cities. Known for its mix of luxury homes, corporate headquarters, and upscale shopping along the Perimeter, Sandy Springs demands restoration professionals who deliver exceptional quality. Our certified technicians respond quickly to water, fire, and mold emergencies throughout Sandy Springs, handling everything from high-rise condos along the Chattahoochee to estate homes in the city's prestigious neighborhoods.",
+    neighborhoods: [
+      "Riverside",
+      "Mount Vernon",
+      "Dunwoody",
+      "Perimeter Center",
+      "Powers Ferry",
+      "Spalding Drive",
+      "Glenridge",
+      "Hammond Drive",
+    ],
+    zipCodes: ["30328", "30338", "30342", "30350"],
+    responseTime: "40 minutes",
+    projectsCompleted: 64,
+    metaTitle: "Water & Fire Damage Restoration Sandy Springs GA | 24/7 Emergency",
+    metaDescription:
+      "Premium water and fire damage restoration in Sandy Springs, GA. Serving Riverside, Mount Vernon & all Fulton County neighborhoods. Call (404) 808-3677.",
+  },
 ]
 
 export function getLocationBySlug(slug: string): Location | undefined {

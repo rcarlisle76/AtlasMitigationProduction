@@ -108,6 +108,18 @@ export function LocalBusinessSchema(props: LocalBusinessSchemaProps = {}) {
       name: area,
       "@id": `${data.url}/locations/${area.toLowerCase().replace(/\s+/g, "-")}`,
     })),
+    logo: `${data.url}/logo.png`,
+    slogan: "Atlas holds the World. We restore yours.",
+    paymentAccepted: "Cash, Check, Credit Card, Insurance Claims",
+    currenciesAccepted: "USD",
+    knowsAbout: [
+      "Water Damage Restoration",
+      "Fire Damage Restoration",
+      "Mold Remediation",
+      "Smoke Damage Cleanup",
+      "Storm Damage Restoration",
+      "Commercial Restoration",
+    ],
     sameAs: [
       "https://www.facebook.com/profile.php?id=61587378351930",
       "https://www.yelp.com/biz/atlas-mitigation-acworth",

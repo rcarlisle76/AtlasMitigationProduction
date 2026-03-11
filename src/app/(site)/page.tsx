@@ -24,9 +24,11 @@ import { YelpIcon } from "@/components/ui/yelp-icon"
 
 
 export const metadata: Metadata = {
-  title: "Fire & Water Damage Restoration Acworth GA | Atlas Mitigation",
+  title: {
+    absolute: "Atlas Mitigation | Fire & Water Damage Restoration Acworth GA",
+  },
   description:
-    "24/7 emergency fire and water damage restoration in Acworth, Marietta, Kennesaw and metro Atlanta. Specializing in high-end homes and commercial properties. Call (404) 808-3677.",
+    "Emergency fire & water damage restoration in Acworth, Marietta, Kennesaw & metro Atlanta. High-end homes & commercial. Call (404) 808-3677.",
   openGraph: {
     title: "Atlas Mitigation | Fire & Water Damage Restoration",
     description:
@@ -132,6 +134,7 @@ const serviceAreas = [
   { city: "Buckhead", slug: "buckhead", featured: false },
   { city: "Downtown Atlanta", slug: "downtown-atlanta", featured: false },
   { city: "Conyers", slug: "conyers", featured: false },
+  { city: "Sandy Springs", slug: "sandy-springs", featured: false },
 ]
 
 // Trust badges/certifications

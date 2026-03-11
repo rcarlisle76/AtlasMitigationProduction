@@ -36,7 +36,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Blog posts (from Sanity with fallback)
   const blogPosts = await getAllBlogPosts()
-  const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+  const blogPages: MetadataRoute.Sitemap = blogPosts
+    .filter((post) => post.slug !== "test")
+    .map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: post.datePublished ? new Date(post.datePublished) : new Date(),
     changeFrequency: "monthly" as const,
