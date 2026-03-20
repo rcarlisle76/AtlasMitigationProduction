@@ -96,7 +96,7 @@ export default function PrivacyPolicyPage() {
                 scheduling
               </li>
             </ul>
-            <p className="mt-3">
+            <p className="mt-3 font-semibold">
               We do not use this number for marketing, promotions, or sales
               solicitation of any kind.
             </p>
@@ -105,30 +105,105 @@ export default function PrivacyPolicyPage() {
           {/* Section 4 */}
           <section>
             <h2 className="text-xl font-semibold">
-              4. SMS / Text Messaging
+              4. SMS / Text Messaging Terms &amp; Conditions
             </h2>
             <p className="mt-3">
               By providing your phone number and engaging with our business, you
-              consent to receive SMS text messages from us. These messages will
-              only be sent for the following purposes:
+              consent to receive SMS text messages from us through our business
+              number{" "}
+              <a
+                href="tel:+17705881119"
+                className="font-semibold hover:text-atlas-primary transition-colors"
+              >
+                (770) 588-1119
+              </a>
+              .
             </p>
-            <ul className="mt-3 list-disc space-y-2 pl-6">
+
+            <p className="mt-4">
+              <strong>Opt-In Process:</strong> Contacts opt in on our website
+              contact page at{" "}
+              <Link
+                href="/contact"
+                className="text-atlas-primary hover:underline"
+              >
+                https://atlasmitigation.com
+              </Link>{" "}
+              by checking a box to agree to receive informational messages from
+              Atlas Mitigation and Restoration LLC. No mobile opt-in information
+              is shared with third parties.
+            </p>
+
+            <p className="mt-4">
+              <strong>Message Types:</strong> Messages sent through this number
+              are limited to the following types:
+            </p>
+            <ul className="mt-2 list-disc space-y-2 pl-6">
               <li>
-                Scheduling and confirming estimates or service appointments
+                <strong>Estimate Coordination:</strong> Scheduling and confirming
+                appointments for property assessments and estimates
               </li>
               <li>
-                Providing updates on job site visits and project progress
+                <strong>Job Site Scheduling:</strong> Communicating arrival
+                times, visit confirmations, and schedule changes
               </li>
               <li>
-                Follow-up communication directly related to restoration work
-                performed or requested
+                <strong>Job Progress Updates:</strong> Notifications and updates
+                regarding the status of active restoration work
+              </li>
+              <li>
+                <strong>Internal Team Communications:</strong> Crew-to-crew
+                messaging related to active job sites and assignments
+              </li>
+              <li>
+                <strong>Follow-Up Communications:</strong> Messages related to
+                completed work, documentation, or insurance coordination
               </li>
             </ul>
-            <p className="mt-3">
-              Message frequency varies based on the nature and status of your
-              service. Standard message and data rates may apply. You may opt out
-              at any time by replying <strong>STOP</strong> to any message. For
-              help, reply <strong>HELP</strong>.
+
+            <p className="mt-4">
+              <strong>Message Frequency:</strong> You may receive between{" "}
+              <strong>1 to 100 messages per month</strong> depending on the
+              number of active jobs, scheduled appointments, and ongoing service
+              updates associated with your property or project.
+            </p>
+
+            <p className="mt-4">
+              <strong>Rates:</strong> Atlas Mitigation does not charge for SMS
+              messages. However, <strong>standard message and data rates may
+              apply</strong> depending on your mobile carrier and plan. Please
+              contact your carrier for details regarding your messaging plan.
+            </p>
+
+            <p className="mt-4">
+              <strong>Opt-In Confirmation:</strong> When you opt in, you will
+              receive the following confirmation message: &ldquo;You are now
+              opted in to receive messages from Atlas Mitigation and Restoration
+              LLC. Msg &amp; data rates may apply. Msg frequency varies
+              (1-100/mo). Reply STOP to cancel, HELP for help.&rdquo;
+            </p>
+
+            <p className="mt-4">
+              <strong>Opt-Out:</strong> You may opt out of receiving SMS messages
+              at any time by replying <strong>STOP</strong> to any message. You
+              will receive the following confirmation: &ldquo;You have been
+              unsubscribed from Atlas Mitigation messages. No further messages
+              will be sent. Reply START to re-subscribe.&rdquo; To re-enroll,
+              reply <strong>START</strong> and you will receive: &ldquo;You have
+              been re-subscribed to Atlas Mitigation messages. Msg &amp; data
+              rates may apply.&rdquo;
+            </p>
+
+            <p className="mt-4">
+              <strong>Help:</strong> Reply <strong>HELP</strong> to any message
+              to receive: &ldquo;Atlas Mitigation: For help, call (770) 588-1119
+              or email info@atlasmitigation.com. Msg &amp; data rates may apply.
+              Reply STOP to cancel.&rdquo;
+            </p>
+
+            <p className="mt-4 font-semibold">
+              We do not use this number for marketing, promotions, or sales
+              solicitation of any kind.
             </p>
           </section>
 
@@ -138,9 +213,10 @@ export default function PrivacyPolicyPage() {
               5. How We Share Your Information
             </h2>
             <p className="mt-3">
-              We do not sell, rent, or share your personal information with third
-              parties for marketing purposes. Your information may only be shared
-              in the following limited circumstances:
+              We do <strong>not</strong> sell, rent, or share your personal
+              information with third parties for marketing purposes. Your
+              information may only be shared in the following limited
+              circumstances:
             </p>
             <ul className="mt-3 list-disc space-y-2 pl-6">
               <li>
@@ -205,10 +281,10 @@ export default function PrivacyPolicyPage() {
               <div className="flex items-center gap-2 text-sm">
                 <Phone className="h-4 w-4 text-atlas-primary" />
                 <a
-                  href="tel:+14048083677"
+                  href="tel:+17705881119"
                   className="hover:text-atlas-primary transition-colors"
                 >
-                  (404) 808-3677
+                  (770) 588-1119
                 </a>
               </div>
               <div className="flex items-center gap-2 text-sm">
