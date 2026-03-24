@@ -153,12 +153,8 @@ export function Header() {
                 size="icon"
                 onClick={() => setSearchOpen(true)}
                 aria-label="Search"
-                className="relative"
               >
                 <Search className="h-5 w-5" />
-                <kbd className="absolute -bottom-1 -right-1 pointer-events-none hidden xl:inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100">
-                  ⌘K
-                </kbd>
               </Button>
               <Button variant="outline" asChild>
                 <Link href="/contact">Get Free Quote</Link>
