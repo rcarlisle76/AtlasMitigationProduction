@@ -24,6 +24,7 @@ interface FormData {
   serviceType: ServiceType | ""
   urgency: "emergency" | "urgent" | "standard" | ""
   message: string
+  smsOptIn: boolean
 }
 
 const initialFormData: FormData = {
@@ -34,6 +35,7 @@ const initialFormData: FormData = {
   serviceType: "",
   urgency: "",
   message: "",
+  smsOptIn: false,
 }
 
 const serviceTypes = [
@@ -63,8 +65,12 @@ export function ContactForm() {
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
+    const { name, value, type } = e.target
+    const checked = (e.target as HTMLInputElement).checked
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }))
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -293,6 +299,30 @@ export function ContactForm() {
                 "Send Message"
               )}
             </Button>
+          </div>
+
+          {/* SMS Opt-In */}
+          <div className="flex items-start gap-3">
+            <input
+              type="checkbox"
+              id="smsOptIn"
+              name="smsOptIn"
+              checked={formData.smsOptIn}
+              onChange={handleChange}
+              className="mt-1 h-4 w-4 rounded border-gray-300 text-atlas-primary focus:ring-atlas-primary"
+            />
+            <label htmlFor="smsOptIn" className="text-sm text-muted-foreground">
+              I agree to receive informational SMS/text messages from Atlas
+              Mitigation and Restoration LLC regarding estimates, scheduling,
+              and job updates. Msg &amp; data rates may apply. Msg frequency
+              varies (1-100/mo). Reply STOP to cancel, HELP for help.{" "}
+              <a
+                href="/privacy"
+                className="text-atlas-primary hover:underline"
+              >
+                Privacy Policy
+              </a>
+            </label>
           </div>
 
           {/* Privacy Note */}
