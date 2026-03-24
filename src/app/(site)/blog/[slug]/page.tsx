@@ -316,9 +316,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       className="mt-4 w-full bg-white text-atlas-primary hover:bg-white/90"
                       asChild
                     >
-                      <a href="tel:+14048083677" className="flex items-center">
+                      <a href="tel:+17705881119" className="flex items-center">
                         <Phone className="mr-2 h-4 w-4" />
-                        Call (404) 808-3677
+                        Call (770) 588-1119
                       </a>
                     </Button>
                     <Button
@@ -447,9 +447,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               className="bg-white text-atlas-primary hover:bg-white/90"
               asChild
             >
-              <a href="tel:+14048083677" className="flex items-center gap-2">
+              <a href="tel:+17705881119" className="flex items-center gap-2">
                 <Phone className="h-5 w-5" />
-                (404) 808-3677
+                (770) 588-1119
               </a>
             </Button>
             <Button

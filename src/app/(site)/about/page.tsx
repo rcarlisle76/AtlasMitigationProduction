@@ -104,9 +104,9 @@ export default function AboutPage() {
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Button variant="emergency" size="lg" asChild>
-                  <a href="tel:+14048083677" className="flex items-center gap-2">
+                  <a href="tel:+17705881119" className="flex items-center gap-2">
                     <Phone className="h-5 w-5" />
-                    (404) 808-3677
+                    (770) 588-1119
                   </a>
                 </Button>
                 <Button
@@ -411,9 +411,9 @@ export default function AboutPage() {
               className="bg-white text-atlas-primary hover:bg-white/90"
               asChild
             >
-              <a href="tel:+14048083677" className="flex items-center gap-2">
+              <a href="tel:+17705881119" className="flex items-center gap-2">
                 <Phone className="h-5 w-5" />
-                (404) 808-3677
+                (770) 588-1119
               </a>
             </Button>
             <Button

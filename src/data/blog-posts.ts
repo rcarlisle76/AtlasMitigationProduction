@@ -93,7 +93,7 @@ Before you do anything else, evaluate whether it's safe to enter or remain in th
 
 **Slip and Fall Risks:** Wet surfaces are extremely slippery, and water can hide debris, damaged flooring, or other tripping hazards. Wear appropriate footwear with good traction if you must walk through affected areas.
 
-If any significant safety concerns exist, evacuate your family and pets, then call Atlas Mitigation at (404) 808-3677 for emergency response. We're available 24/7 for water damage emergencies throughout the Atlanta metro area.
+If any significant safety concerns exist, evacuate your family and pets, then call Atlas Mitigation at (770) 588-1119 for emergency response. We're available 24/7 for water damage emergencies throughout the Atlanta metro area.
 
 ## Stop the Water Source
 
@@ -167,7 +167,7 @@ Your insurance company will assign an adjuster to inspect the damage and evaluat
 
 ## The Atlas Mitigation Emergency Response
 
-When you call Atlas Mitigation at (404) 808-3677, our emergency response team mobilizes immediately. We understand that water damage doesn't wait for business hours, which is why we provide 24/7 emergency service throughout Acworth, Atlanta, and the surrounding metro area.
+When you call Atlas Mitigation at (770) 588-1119, our emergency response team mobilizes immediately. We understand that water damage doesn't wait for business hours, which is why we provide 24/7 emergency service throughout Acworth, Atlanta, and the surrounding metro area.
 
 Our typical emergency response includes arrival within 60 to 90 minutes for most metro Atlanta locations, immediate assessment of safety and damage extent, professional water extraction using commercial-grade equipment, moisture mapping with thermal imaging and moisture meters, strategic placement of air movers and dehumidifiers, documentation and photography for insurance purposes, and direct communication with your insurance company if desired.
 
@@ -179,7 +179,7 @@ Water damage is stressful and overwhelming, but taking the right immediate steps
 
 The decisions you make in the first few hours after water damage can save you thousands of dollars and weeks of inconvenience. When in doubt, err on the side of caution and contact restoration professionals who can assess the situation and provide expert guidance.
 
-Atlas Mitigation has served the Acworth and Atlanta communities for years, responding to water emergencies of all sizes. We're here to help you navigate this challenging situation and restore your home to pre-loss condition. Call us anytime at (404) 808-3677—we're ready when you need us.`,
+Atlas Mitigation has served the Acworth and Atlanta communities for years, responding to water emergencies of all sizes. We're here to help you navigate this challenging situation and restore your home to pre-loss condition. Call us anytime at (770) 588-1119—we're ready when you need us.`,
     category: "water-damage",
     datePublished: "2026-01-15",
     author: defaultAuthor,
@@ -337,7 +337,7 @@ Understanding what happens during each phase helps you know what to expect and w
 
 ### Phase 1: Emergency Contact and Response (0-2 Hours)
 
-When you call Atlas Mitigation at (404) 808-3677, we gather essential information about your situation, dispatch a crew immediately, and typically arrive within 60 to 90 minutes for most Atlanta metro locations. Emergency response doesn't wait for business hours—we're available 24/7 because water damage doesn't operate on a schedule.
+When you call Atlas Mitigation at (770) 588-1119, we gather essential information about your situation, dispatch a crew immediately, and typically arrive within 60 to 90 minutes for most Atlanta metro locations. Emergency response doesn't wait for business hours—we're available 24/7 because water damage doesn't operate on a schedule.
 
 ### Phase 2: Assessment and Water Extraction (2-4 Hours)
 
@@ -446,7 +446,7 @@ Having realistic expectations reduces stress and helps you make appropriate arra
 
 Water damage restoration timelines vary based on many factors, but professional restoration companies can provide realistic estimates based on your specific situation. The most important factor you control is how quickly you respond. Calling professionals immediately after discovering damage minimizes both the extent of damage and the time required for restoration.
 
-If water damage has affected your Acworth or Atlanta area home, don't delay. Call Atlas Mitigation at (404) 808-3677 for immediate response. We'll assess your situation, provide a realistic timeline, and begin the restoration process right away. Our emergency services are available 24/7 because we know water damage doesn't wait for convenient times.
+If water damage has affected your Acworth or Atlanta area home, don't delay. Call Atlas Mitigation at (770) 588-1119 for immediate response. We'll assess your situation, provide a realistic timeline, and begin the restoration process right away. Our emergency services are available 24/7 because we know water damage doesn't wait for convenient times.
 
 The sooner we start, the sooner you'll have your home back.`,
     category: "water-damage",
@@ -705,7 +705,7 @@ At Atlas Mitigation, proper category assessment is the foundation of every water
 
 We never cut corners on safety, even with Category 1 water. We never under-treat a situation to save costs. We follow IICRC S500 standards precisely because they're based on science and real-world experience about what works and what doesn't.
 
-When you call Atlas Mitigation at (404) 808-3677, we assess your situation accurately from the beginning, explain clearly what category you're dealing with and why, apply appropriate safety measures and protocols, document everything for insurance purposes, and restore your home properly the first time.
+When you call Atlas Mitigation at (770) 588-1119, we assess your situation accurately from the beginning, explain clearly what category you're dealing with and why, apply appropriate safety measures and protocols, document everything for insurance purposes, and restore your home properly the first time.
 
 Whether you're dealing with Category 1, 2, or 3 water damage in your Acworth or Atlanta area home, we have the expertise, equipment, and experience to handle it correctly and completely.
 
@@ -713,7 +713,7 @@ Whether you're dealing with Category 1, 2, or 3 water damage in your Acworth or 
 
 Water damage doesn't improve with time. Clean water becomes contaminated water. Small problems become big problems. Waiting to call professionals allows category escalation that increases costs, extends timelines, and creates greater health risks.
 
-If water damage has affected your home, call Atlas Mitigation immediately at (404) 808-3677. We're available 24/7 for emergency response because we know that water damage category escalation happens on its own timeline, not a convenient schedule.
+If water damage has affected your home, call Atlas Mitigation immediately at (770) 588-1119. We're available 24/7 for emergency response because we know that water damage category escalation happens on its own timeline, not a convenient schedule.
 
 Our rapid response prevents category escalation, minimizes damage extent, protects your family's health, and reduces overall restoration costs. Don't let clean water become contaminated water while you're deciding whether to call. Contact us now—we're here to help.`,
     category: "water-damage",
@@ -823,7 +823,7 @@ For anything beyond a very minor water incident, professional restoration servic
 
 The cost of professional drying is an investment in mold prevention. It's far less expensive than mold remediation that becomes necessary when DIY efforts prove inadequate.
 
-When you call Atlas Mitigation at (404) 808-3677, we respond rapidly with professional equipment and expertise to prevent mold before it starts.
+When you call Atlas Mitigation at (770) 588-1119, we respond rapidly with professional equipment and expertise to prevent mold before it starts.
 
 ## Short-Term Actions: Days 2-7
 
@@ -1007,7 +1007,7 @@ We follow IICRC S500 standards for water damage restoration, which incorporate m
 
 Mold prevention is most effective when it begins immediately after water damage occurs. The 24 to 48 hour window for preventing mold growth is real, and it doesn't pause while you're deciding what to do.
 
-If water damage has affected your Acworth or Atlanta area home, call Atlas Mitigation immediately at (404) 808-3677. Our 24/7 emergency response team will begin mold prevention measures right away, giving you the best possible chance of avoiding mold growth.
+If water damage has affected your Acworth or Atlanta area home, call Atlas Mitigation immediately at (770) 588-1119. Our 24/7 emergency response team will begin mold prevention measures right away, giving you the best possible chance of avoiding mold growth.
 
 The cost of prevention is always less than remediation. The time for mold prevention is now, before mold has the opportunity to establish. Contact us today—protecting your home from mold starts with a single phone call.`,
     category: "mold",
@@ -1290,7 +1290,7 @@ If you're experiencing any of the five signs discussed—large mold area, recurr
 
 The health risks, the probability of incomplete removal, the likelihood of recurrence, and the potential for additional property damage all argue strongly for professional intervention rather than DIY attempts.
 
-Atlas Mitigation serves the Acworth and Atlanta metro area with professional mold remediation services. If you've discovered mold in your home, call us at (404) 808-3677 for a comprehensive assessment. We'll evaluate your situation, explain your options, and provide a detailed scope and estimate for complete remediation.
+Atlas Mitigation serves the Acworth and Atlanta metro area with professional mold remediation services. If you've discovered mold in your home, call us at (770) 588-1119 for a comprehensive assessment. We'll evaluate your situation, explain your options, and provide a detailed scope and estimate for complete remediation.
 
 Most mold situations benefit from professional handling. Don't risk your family's health or your property by attempting remediation that exceeds appropriate DIY limits. Call Atlas Mitigation today for expert mold remediation that addresses both the symptoms and the root causes.`,
     category: "mold",

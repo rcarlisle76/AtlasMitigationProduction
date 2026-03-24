@@ -66,11 +66,11 @@ export function Header() {
               </div>
             </div>
             <a
-              href="tel:+14048083677"
+              href="tel:+17705881119"
               className="flex items-center gap-2 font-semibold hover:text-atlas-accent transition-colors min-h-[44px]"
             >
               <Phone className="h-5 w-5 sm:h-4 sm:w-4" />
-              <span className="text-base sm:text-sm">(404) 808-3677</span>
+              <span className="text-base sm:text-sm">(770) 588-1119</span>
             </a>
           </div>
         </div>
@@ -177,7 +177,7 @@ export function Header() {
                 <Search className="h-5 w-5" />
               </Button>
               <Button variant="emergency" size="lg" className="h-11" asChild>
-                <a href="tel:+14048083677" className="flex items-center gap-2">
+                <a href="tel:+17705881119" className="flex items-center gap-2">
                   <Phone className="h-5 w-5" />
                   <span className="hidden xs:inline">Call</span>
                 </a>

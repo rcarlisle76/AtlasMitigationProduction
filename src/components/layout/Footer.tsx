@@ -46,11 +46,11 @@ export function Footer() {
               <p className="text-sm opacity-90">Fast response when disaster strikes</p>
             </div>
             <a
-              href="tel:+14048083677"
+              href="tel:+17705881119"
               className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-4 font-bold text-atlas-accent transition-colors hover:bg-gray-100 min-h-[56px] w-full sm:w-auto text-lg sm:text-base"
             >
               <Phone className="h-6 w-6 sm:h-5 sm:w-5" />
-              Call (404) 808-3677
+              Call (770) 588-1119
             </a>
           </div>
         </div>
@@ -80,11 +80,11 @@ export function Footer() {
             </p>
             <div className="space-y-3">
               <a
-                href="tel:+14048083677"
+                href="tel:+17705881119"
                 className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors min-h-[44px] py-2"
               >
                 <Phone className="h-5 w-5 text-atlas-accent" />
-                (404) 808-3677
+                (770) 588-1119
               </a>
               <a
                 href="mailto:info@atlasmitigation.com"

@@ -86,7 +86,7 @@ export default async function OGImage() {
             <span style={{ color: "#60a5fa" }}>|</span>
             <span>Certified Technicians</span>
             <span style={{ color: "#60a5fa" }}>|</span>
-            <span>(404) 808-3677</span>
+            <span>(770) 588-1119</span>
           </div>
         </div>
       </div>

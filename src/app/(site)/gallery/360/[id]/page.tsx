@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PanoramaPageProps): Promise<M
     title: `${panorama.title} — 360° Virtual Tour`,
     description:
       panorama.description ||
-      `Explore this ${panorama.serviceTitle || "restoration"} project in immersive 360°. Atlas Mitigation — Call (404) 808-3677.`,
+      `Explore this ${panorama.serviceTitle || "restoration"} project in immersive 360°. Atlas Mitigation — Call (770) 588-1119.`,
   }
 }
 
@@ -54,9 +54,9 @@ export default async function PanoramaPage({ params }: PanoramaPageProps) {
             </Button>
           </div>
           <Button variant="emergency" size="sm" asChild>
-            <a href="tel:+14048083677" className="flex items-center gap-2">
+            <a href="tel:+17705881119" className="flex items-center gap-2">
               <Phone className="h-4 w-4" />
-              (404) 808-3677
+              (770) 588-1119
             </a>
           </Button>
         </div>
@@ -113,9 +113,9 @@ export default async function PanoramaPage({ params }: PanoramaPageProps) {
               className="bg-white text-atlas-primary hover:bg-white/90"
               asChild
             >
-              <a href="tel:+14048083677" className="flex items-center gap-2">
+              <a href="tel:+17705881119" className="flex items-center gap-2">
                 <Phone className="h-5 w-5" />
-                (404) 808-3677
+                (770) 588-1119
               </a>
             </Button>
             <Button

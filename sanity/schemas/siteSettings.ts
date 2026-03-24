@@ -32,7 +32,7 @@ export const siteSettings = defineType({
           name: "phone",
           type: "string",
           title: "Phone Number",
-          initialValue: "(404) 808-3677",
+          initialValue: "(770) 588-1119",
         },
         {
           name: "email",

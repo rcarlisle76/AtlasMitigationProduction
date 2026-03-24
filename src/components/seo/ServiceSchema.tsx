@@ -16,7 +16,7 @@ interface ServiceSchemaProps {
 const defaultProvider = {
   name: "Atlas Mitigation",
   url: "https://atlasmitigation.com",
-  telephone: "+1-404-808-3677",
+  telephone: "+1-770-588-1119",
 }
 
 export function ServiceSchema({

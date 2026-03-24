@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     absolute: "Atlas Mitigation | Fire & Water Damage Restoration Acworth GA",
   },
   description:
-    "Emergency fire & water damage restoration in Acworth, Marietta, Kennesaw & metro Atlanta. High-end homes & commercial. Call (404) 808-3677.",
+    "Emergency fire & water damage restoration in Acworth, Marietta, Kennesaw & metro Atlanta. High-end homes & commercial. Call (770) 588-1119.",
   openGraph: {
     title: "Atlas Mitigation | Fire & Water Damage Restoration",
     description:

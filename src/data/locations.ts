@@ -38,7 +38,7 @@ export const locations: Location[] = [
     projectsCompleted: 127,
     metaTitle: "Water & Fire Damage Restoration Acworth GA | 24/7 Service",
     metaDescription:
-      "24/7 water and fire damage restoration in Acworth, GA. Fast 45-min response. Serving Lake Acworth, Brookstone & all neighborhoods. Call (404) 808-3677.",
+      "24/7 water and fire damage restoration in Acworth, GA. Fast 45-min response. Serving Lake Acworth, Brookstone & all neighborhoods. Call (770) 588-1119.",
   },
   {
     slug: "marietta",
@@ -64,7 +64,7 @@ export const locations: Location[] = [
     projectsCompleted: 183,
     metaTitle: "Water & Fire Damage Restoration Marietta GA | Emergency Service",
     metaDescription:
-      "Professional water and fire damage restoration in Marietta, GA. 40-min response. East Cobb, West Cobb & all areas. IICRC certified. Call (404) 808-3677.",
+      "Professional water and fire damage restoration in Marietta, GA. 40-min response. East Cobb, West Cobb & all areas. IICRC certified. Call (770) 588-1119.",
   },
   {
     slug: "kennesaw",
@@ -89,7 +89,7 @@ export const locations: Location[] = [
     projectsCompleted: 94,
     metaTitle: "Water & Fire Damage Restoration Kennesaw GA | 24/7 Response",
     metaDescription:
-      "Emergency water and fire damage restoration in Kennesaw, GA. 45-min response. Town Center, Legacy Park & surrounding areas. Call (404) 808-3677.",
+      "Emergency water and fire damage restoration in Kennesaw, GA. 45-min response. Town Center, Legacy Park & surrounding areas. Call (770) 588-1119.",
   },
   {
     slug: "woodstock",
@@ -113,7 +113,7 @@ export const locations: Location[] = [
     projectsCompleted: 67,
     metaTitle: "Water & Fire Damage Restoration Woodstock GA | Fast Response",
     metaDescription:
-      "24/7 water and fire damage restoration in Woodstock, GA. Towne Lake, Downtown & all areas. Cherokee County emergency service. Call (404) 808-3677.",
+      "24/7 water and fire damage restoration in Woodstock, GA. Towne Lake, Downtown & all areas. Cherokee County emergency service. Call (770) 588-1119.",
   },
   {
     slug: "canton",
@@ -136,7 +136,7 @@ export const locations: Location[] = [
     projectsCompleted: 42,
     metaTitle: "Water & Fire Damage Restoration Canton GA | Emergency Service",
     metaDescription:
-      "Professional water and fire damage restoration in Canton, GA. Cherokee County coverage. Downtown Canton & all areas. Call (404) 808-3677.",
+      "Professional water and fire damage restoration in Canton, GA. Cherokee County coverage. Downtown Canton & all areas. Call (770) 588-1119.",
   },
   {
     slug: "roswell",
@@ -160,7 +160,7 @@ export const locations: Location[] = [
     projectsCompleted: 78,
     metaTitle: "Water & Fire Damage Restoration Roswell GA | Luxury Home Experts",
     metaDescription:
-      "Premium water and fire damage restoration in Roswell, GA. Historic home specialists. Riverside, Mountain Park & all areas. Call (404) 808-3677.",
+      "Premium water and fire damage restoration in Roswell, GA. Historic home specialists. Riverside, Mountain Park & all areas. Call (770) 588-1119.",
   },
   {
     slug: "alpharetta",
@@ -184,7 +184,7 @@ export const locations: Location[] = [
     projectsCompleted: 61,
     metaTitle: "Water & Fire Damage Restoration Alpharetta GA | 24/7 Service",
     metaDescription:
-      "24/7 water and fire damage restoration in Alpharetta, GA. Avalon, Windward & North Fulton areas. Commercial & residential. Call (404) 808-3677.",
+      "24/7 water and fire damage restoration in Alpharetta, GA. Avalon, Windward & North Fulton areas. Commercial & residential. Call (770) 588-1119.",
   },
   {
     slug: "smyrna",
@@ -208,7 +208,7 @@ export const locations: Location[] = [
     projectsCompleted: 89,
     metaTitle: "Water & Fire Damage Restoration Smyrna GA | Fast Response",
     metaDescription:
-      "Emergency water and fire damage restoration in Smyrna, GA. 35-min response. Vinings, Downtown & all areas. Cobb County experts. Call (404) 808-3677.",
+      "Emergency water and fire damage restoration in Smyrna, GA. 35-min response. Vinings, Downtown & all areas. Cobb County experts. Call (770) 588-1119.",
   },
   {
     slug: "powder-springs",
@@ -230,7 +230,7 @@ export const locations: Location[] = [
     projectsCompleted: 38,
     metaTitle: "Water & Fire Damage Restoration Powder Springs GA",
     metaDescription:
-      "Professional water and fire damage restoration in Powder Springs, GA. Lost Mountain & all areas. 24/7 Cobb County service. Call (404) 808-3677.",
+      "Professional water and fire damage restoration in Powder Springs, GA. Lost Mountain & all areas. 24/7 Cobb County service. Call (770) 588-1119.",
   },
   {
     slug: "dallas",
@@ -251,7 +251,7 @@ export const locations: Location[] = [
     projectsCompleted: 24,
     metaTitle: "Water & Fire Damage Restoration Dallas GA | Paulding County",
     metaDescription:
-      "24/7 water and fire damage restoration in Dallas & Paulding County, GA. Emergency response. Certified technicians. Call (404) 808-3677.",
+      "24/7 water and fire damage restoration in Dallas & Paulding County, GA. Emergency response. Certified technicians. Call (770) 588-1119.",
   },
   {
     slug: "decatur",
@@ -276,7 +276,7 @@ export const locations: Location[] = [
     projectsCompleted: 53,
     metaTitle: "Water & Fire Damage Restoration Decatur GA | 24/7 Emergency",
     metaDescription:
-      "24/7 water and fire damage restoration in Decatur, GA. Serving Oakhurst, Downtown Decatur & all DeKalb County neighborhoods. Call (404) 808-3677.",
+      "24/7 water and fire damage restoration in Decatur, GA. Serving Oakhurst, Downtown Decatur & all DeKalb County neighborhoods. Call (770) 588-1119.",
   },
   {
     slug: "buckhead",
@@ -301,7 +301,7 @@ export const locations: Location[] = [
     projectsCompleted: 71,
     metaTitle: "Water & Fire Damage Restoration Buckhead Atlanta | Luxury Specialists",
     metaDescription:
-      "Premium water and fire damage restoration in Buckhead, Atlanta. Luxury home & high-rise specialists. Tuxedo Park, Chastain Park & all areas. Call (404) 808-3677.",
+      "Premium water and fire damage restoration in Buckhead, Atlanta. Luxury home & high-rise specialists. Tuxedo Park, Chastain Park & all areas. Call (770) 588-1119.",
   },
   {
     slug: "downtown-atlanta",
@@ -326,7 +326,7 @@ export const locations: Location[] = [
     projectsCompleted: 92,
     metaTitle: "Water & Fire Damage Restoration Downtown Atlanta | Commercial Experts",
     metaDescription:
-      "24/7 water and fire damage restoration in Downtown Atlanta. Commercial & residential specialists. Fast 35-min response. Call (404) 808-3677.",
+      "24/7 water and fire damage restoration in Downtown Atlanta. Commercial & residential specialists. Fast 35-min response. Call (770) 588-1119.",
   },
   {
     slug: "conyers",
@@ -350,7 +350,7 @@ export const locations: Location[] = [
     projectsCompleted: 31,
     metaTitle: "Water & Fire Damage Restoration Conyers GA | Rockdale County",
     metaDescription:
-      "Professional water and fire damage restoration in Conyers & Rockdale County, GA. 24/7 emergency response. Certified technicians. Call (404) 808-3677.",
+      "Professional water and fire damage restoration in Conyers & Rockdale County, GA. 24/7 emergency response. Certified technicians. Call (770) 588-1119.",
   },
   {
     slug: "sandy-springs",
@@ -375,7 +375,7 @@ export const locations: Location[] = [
     projectsCompleted: 64,
     metaTitle: "Water & Fire Damage Restoration Sandy Springs GA | 24/7 Emergency",
     metaDescription:
-      "Premium water and fire damage restoration in Sandy Springs, GA. Serving Riverside, Mount Vernon & all Fulton County neighborhoods. Call (404) 808-3677.",
+      "Premium water and fire damage restoration in Sandy Springs, GA. Serving Riverside, Mount Vernon & all Fulton County neighborhoods. Call (770) 588-1119.",
   },
 ]
 

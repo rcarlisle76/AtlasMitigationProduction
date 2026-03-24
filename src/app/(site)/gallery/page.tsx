@@ -7,7 +7,7 @@ export const revalidate = 60
 export const metadata: Metadata = {
   title: "Restoration Project Gallery",
   description:
-    "View before and after photos of our restoration projects in Acworth, Marietta, Kennesaw and metro Atlanta. Water damage, fire damage, mold remediation results. Call (404) 808-3677.",
+    "View before and after photos of our restoration projects in Acworth, Marietta, Kennesaw and metro Atlanta. Water damage, fire damage, mold remediation results. Call (770) 588-1119.",
   openGraph: {
     title: "Restoration Project Gallery | Atlas Mitigation",
     description:

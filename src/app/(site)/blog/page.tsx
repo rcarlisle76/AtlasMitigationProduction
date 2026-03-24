@@ -72,7 +72,7 @@ export default async function BlogPage() {
                   Atlanta metro area.
                 </p>
                 <Button variant="emergency" className="mt-4 w-full" asChild>
-                  <a href="tel:+14048083677">Call (404) 808-3677</a>
+                  <a href="tel:+17705881119">Call (770) 588-1119</a>
                 </Button>
                 <Button
                   variant="outline"
@@ -163,7 +163,7 @@ export default async function BlogPage() {
               className="bg-white text-atlas-primary hover:bg-white/90"
               asChild
             >
-              <a href="tel:+14048083677">Call (404) 808-3677</a>
+              <a href="tel:+17705881119">Call (770) 588-1119</a>
             </Button>
             <Button
               variant="outline"

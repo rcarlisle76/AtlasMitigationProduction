@@ -14,7 +14,7 @@ import { ContactForm } from "./contact-form"
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Contact Atlas Mitigation for 24/7 emergency restoration services in Acworth, Marietta, Kennesaw and metro Atlanta. Call (404) 808-3677 or request a free quote online.",
+    "Contact Atlas Mitigation for 24/7 emergency restoration services in Acworth, Marietta, Kennesaw and metro Atlanta. Call (770) 588-1119 or request a free quote online.",
   openGraph: {
     title: "Contact Us | Atlas Mitigation",
     description:
@@ -61,11 +61,11 @@ export default function ContactPage() {
               </span>
             </div>
             <a
-              href="tel:+14048083677"
+              href="tel:+17705881119"
               className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-2 font-bold text-atlas-accent hover:bg-white/90 transition-colors"
             >
               <Phone className="h-5 w-5" />
-              (404) 808-3677
+              (770) 588-1119
             </a>
           </div>
         </div>
@@ -100,10 +100,10 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold">Phone</h3>
                       <a
-                        href="tel:+14048083677"
+                        href="tel:+17705881119"
                         className="mt-1 text-lg font-bold text-atlas-primary hover:underline"
                       >
-                        (404) 808-3677
+                        (770) 588-1119
                       </a>
                       <p className="mt-1 text-sm text-muted-foreground">
                         Available 24/7 for emergencies

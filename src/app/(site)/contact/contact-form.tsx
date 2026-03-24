@@ -99,10 +99,10 @@ export function ContactForm() {
           <p className="mt-4 text-sm text-green-600">
             For emergencies, please call us directly at{" "}
             <a
-              href="tel:+14048083677"
+              href="tel:+17705881119"
               className="font-bold underline hover:no-underline"
             >
-              (404) 808-3677
+              (770) 588-1119
             </a>
           </p>
           <Button

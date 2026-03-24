@@ -27,7 +27,7 @@ const defaultBusinessInfo: LocalBusinessSchemaProps = {
   name: "Atlas Mitigation",
   description:
     "Premium fire and water damage restoration services for high-end homes and commercial properties in the Atlanta metro area. 24/7 emergency response available.",
-  telephone: "+1-404-808-3677",
+  telephone: "+1-770-588-1119",
   email: "info@atlasmitigation.com",
   address: {
     streetAddress: "1720 Mars Hill Rd",

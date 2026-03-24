@@ -127,7 +127,7 @@ Whether you're dealing with a flooded basement, water damage from a roof leak, o
     ],
     metaTitle: "Water Damage Restoration Acworth GA | 24/7 Emergency Service",
     metaDescription:
-      "Fast 24/7 water damage restoration in Acworth, Marietta & Atlanta. IICRC certified. 60-min response. Burst pipes, flooding, sewage cleanup. Call (404) 808-3677.",
+      "Fast 24/7 water damage restoration in Acworth, Marietta & Atlanta. IICRC certified. 60-min response. Burst pipes, flooding, sewage cleanup. Call (770) 588-1119.",
   },
   {
     slug: "fire-damage-restoration",
@@ -220,7 +220,7 @@ Fire damage restoration requires immediate action. Soot becomes more difficult t
     ],
     metaTitle: "Fire Damage Restoration Acworth GA | Smoke & Soot Cleanup",
     metaDescription:
-      "Professional fire damage restoration in Acworth, Marietta & Atlanta. Smoke removal, soot cleanup, odor elimination. 24/7 emergency service. Call (404) 808-3677.",
+      "Professional fire damage restoration in Acworth, Marietta & Atlanta. Smoke removal, soot cleanup, odor elimination. 24/7 emergency service. Call (770) 588-1119.",
   },
   {
     slug: "mold-remediation",
@@ -313,7 +313,7 @@ After mold removal, we address the underlying moisture problem to prevent recurr
     ],
     metaTitle: "Mold Remediation Acworth GA | Professional Mold Removal",
     metaDescription:
-      "Certified mold remediation in Acworth, Marietta & Atlanta. Safe mold removal, moisture control, prevention. Protect your family's health. Call (404) 808-3677.",
+      "Certified mold remediation in Acworth, Marietta & Atlanta. Safe mold removal, moisture control, prevention. Protect your family's health. Call (770) 588-1119.",
   },
   {
     slug: "smoke-damage-cleanup",
@@ -406,7 +406,7 @@ Odor elimination is perhaps the most challenging aspect of smoke damage restorat
     ],
     metaTitle: "Smoke Damage Cleanup Acworth GA | Soot & Odor Removal",
     metaDescription:
-      "Professional smoke damage cleanup in Acworth, Marietta & Atlanta. Soot removal, odor elimination, HVAC cleaning. Guaranteed results. Call (404) 808-3677.",
+      "Professional smoke damage cleanup in Acworth, Marietta & Atlanta. Soot removal, odor elimination, HVAC cleaning. Guaranteed results. Call (770) 588-1119.",
   },
   {
     slug: "storm-damage",
@@ -499,7 +499,7 @@ After major storms, demand for restoration services surges. Atlas Mitigation mai
     ],
     metaTitle: "Storm Damage Restoration Acworth GA | Flood & Wind Damage",
     metaDescription:
-      "Emergency storm damage restoration in Acworth, Marietta & Atlanta. Flood cleanup, wind damage repairs, 24/7 response. Call (404) 808-3677.",
+      "Emergency storm damage restoration in Acworth, Marietta & Atlanta. Flood cleanup, wind damage repairs, 24/7 response. Call (770) 588-1119.",
   },
   {
     slug: "emergency-services",
@@ -592,7 +592,7 @@ Emergency situations are stressful. Beyond the technical response, our team prov
     ],
     metaTitle: "24/7 Emergency Restoration Acworth GA | Immediate Response",
     metaDescription:
-      "24/7 emergency restoration in Acworth, Marietta & Atlanta. 60-minute response. Water, fire, storm damage. Call now: (404) 808-3677.",
+      "24/7 emergency restoration in Acworth, Marietta & Atlanta. 60-minute response. Water, fire, storm damage. Call now: (770) 588-1119.",
   },
   {
     slug: "commercial-restoration",
@@ -685,7 +685,7 @@ Insurance claims for commercial properties are often complex, involving business
     ],
     metaTitle: "Commercial Restoration Acworth GA | Business Water & Fire Damage",
     metaDescription:
-      "Commercial restoration services in Acworth, Marietta & Atlanta. Minimal downtime, 24/7 response, insurance specialists. Call (404) 808-3677.",
+      "Commercial restoration services in Acworth, Marietta & Atlanta. Minimal downtime, 24/7 response, insurance specialists. Call (770) 588-1119.",
   },
 ]
 

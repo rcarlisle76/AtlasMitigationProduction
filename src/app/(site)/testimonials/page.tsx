@@ -212,9 +212,9 @@ export default async function TestimonialsPage() {
                 <Link href="/contact">Get a Free Quote</Link>
               </Button>
               <Button size="lg" variant="emergency" asChild>
-                <a href="tel:+14048083677" className="flex items-center gap-2">
+                <a href="tel:+17705881119" className="flex items-center gap-2">
                   <Phone className="h-5 w-5" />
-                  Call (404) 808-3677
+                  Call (770) 588-1119
                 </a>
               </Button>
             </div>
