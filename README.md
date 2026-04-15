@@ -1,6 +1,6 @@
 # Atlas Mitigation
 
-Professional property restoration website for Atlas Mitigation, serving metro Atlanta (Acworth, Marietta, Kennesaw, Roswell, Sandy Springs, Decatur, Buckhead, Downtown Atlanta, Conyers, and surrounding areas). Features before/after project galleries, 360° virtual tours, blog with vlog support, testimonials, and a Sanity CMS for content management.
+Professional property restoration website for Atlas Mitigation, serving metro Atlanta (Acworth, Marietta, Kennesaw, Roswell, Sandy Springs, Decatur, Buckhead, Downtown Atlanta, Lawrenceville, and surrounding areas). Features before/after project galleries, 360° virtual tours, blog with vlog support, testimonials, and a Sanity CMS for content management.
 
 ## Tech Stack
 
@@ -175,7 +175,7 @@ The `LocalBusinessSchema` includes comprehensive business information:
 ### Local SEO
 
 - **NAP consistency** — Name, Address, Phone consistent across all pages
-- **16 service area pages** — Acworth, Marietta, Kennesaw, Woodstock, Canton, Roswell, Alpharetta, Smyrna, Powder Springs, Dallas, Decatur, Buckhead, Downtown Atlanta, Conyers, Sandy Springs (+ Atlanta in schema)
+- **16 service area pages** — Acworth, Marietta, Kennesaw, Woodstock, Canton, Roswell, Alpharetta, Smyrna, Powder Springs, Dallas, Decatur, Buckhead, Downtown Atlanta, Lawrenceville, Sandy Springs (+ Atlanta in schema)
 - **Google Maps embeds** — Pinned to exact business address (1720 Mars Hill Rd, Acworth, GA 30101) to avoid competitor pins
 - **Social profiles** — Facebook, Nextdoor, Yelp linked in schema `sameAs` and site footer
 

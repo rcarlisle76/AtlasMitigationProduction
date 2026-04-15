@@ -56,7 +56,7 @@ const defaultBusinessInfo: LocalBusinessSchemaProps = {
     "Decatur",
     "Buckhead",
     "Downtown Atlanta",
-    "Conyers",
+    "Lawrenceville",
     "Dallas",
   ],
   url: "https://atlasmitigation.com",

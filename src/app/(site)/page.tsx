@@ -133,7 +133,7 @@ const serviceAreas = [
   { city: "Decatur", slug: "decatur", featured: false },
   { city: "Buckhead", slug: "buckhead", featured: false },
   { city: "Downtown Atlanta", slug: "downtown-atlanta", featured: false },
-  { city: "Conyers", slug: "conyers", featured: false },
+  { city: "Lawrenceville", slug: "lawrenceville", featured: false },
   { city: "Sandy Springs", slug: "sandy-springs", featured: false },
 ]
 
