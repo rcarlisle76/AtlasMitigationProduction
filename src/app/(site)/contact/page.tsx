@@ -146,12 +146,12 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold">Office Address</h3>
                       <p className="mt-1">
-                        1720 Mars Hill Rd
+                        5437 Due West Rd
                         <br />
-                        Acworth, GA 30101
+                        Powder Springs, GA 30127
                       </p>
                       <Link
-                        href="https://maps.google.com/?q=1720+Mars+Hill+Rd+Acworth+GA+30101"
+                        href="https://maps.google.com/?q=5437+Due+West+Rd+Powder+Springs+GA+30127"
                         target="_blank"
                         className="mt-2 inline-block text-sm text-atlas-primary hover:underline"
                       >
@@ -230,14 +230,14 @@ export default function ContactPage() {
 
           <div className="mt-8 aspect-[21/9] overflow-hidden rounded-lg">
             <iframe
-              src="https://www.google.com/maps?q=1720+Mars+Hill+Rd,+Acworth,+GA+30101&output=embed"
+              src="https://www.google.com/maps?q=5437+Due+West+Rd,+Powder+Springs,+GA+30127&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Atlas Mitigation - 1720 Mars Hill Rd, Acworth, GA 30101"
+              title="Atlas Mitigation - 5437 Due West Rd, Powder Springs, GA 30127"
             />
           </div>
         </div>

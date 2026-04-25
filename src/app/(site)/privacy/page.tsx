@@ -276,7 +276,7 @@ export default function PrivacyPolicyPage() {
               <p className="font-semibold">Atlas Mitigation</p>
               <div className="flex items-center gap-2 text-sm">
                 <MapPin className="h-4 w-4 text-atlas-primary" />
-                <span>1720 Mars Hill Rd, Acworth, GA 30101</span>
+                <span>5437 Due West Rd, Powder Springs, GA 30127</span>
               </div>
               <div className="flex items-center gap-2 text-sm">
                 <Phone className="h-4 w-4 text-atlas-primary" />

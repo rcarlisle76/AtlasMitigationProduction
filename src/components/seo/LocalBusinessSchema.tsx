@@ -30,10 +30,10 @@ const defaultBusinessInfo: LocalBusinessSchemaProps = {
   telephone: "+1-770-588-1119",
   email: "info@atlasmitigation.com",
   address: {
-    streetAddress: "1720 Mars Hill Rd",
-    addressLocality: "Acworth",
+    streetAddress: "5437 Due West Rd",
+    addressLocality: "Powder Springs",
     addressRegion: "GA",
-    postalCode: "30101",
+    postalCode: "30127",
     addressCountry: "US",
   },
   geo: {
@@ -43,7 +43,7 @@ const defaultBusinessInfo: LocalBusinessSchemaProps = {
   openingHours: ["Mo-Su 00:00-23:59"],
   priceRange: "$$$",
   areaServed: [
-    "Acworth",
+    "Powder Springs",
     "Marietta",
     "Kennesaw",
     "Woodstock",

@@ -176,7 +176,7 @@ The `LocalBusinessSchema` includes comprehensive business information:
 
 - **NAP consistency** — Name, Address, Phone consistent across all pages
 - **16 service area pages** — Acworth, Marietta, Kennesaw, Woodstock, Canton, Roswell, Alpharetta, Smyrna, Powder Springs, Dallas, Decatur, Buckhead, Downtown Atlanta, Lawrenceville, Sandy Springs (+ Atlanta in schema)
-- **Google Maps embeds** — Pinned to exact business address (1720 Mars Hill Rd, Acworth, GA 30101) to avoid competitor pins
+- **Google Maps embeds** — Pinned to exact business address (5437 Due West Rd, Powder Springs, GA 30127) to avoid competitor pins
 - **Social profiles** — Facebook, Nextdoor, Yelp linked in schema `sameAs` and site footer
 
 ### SEO Files
@@ -301,7 +301,7 @@ Static pages are pre-rendered at build time. Dynamic routes (`/blog`, `/gallery`
 
 ### Google Maps
 
-All embedded Google Maps iframes use the exact business address (`1720 Mars Hill Rd, Acworth, GA 30101`) to avoid displaying competitor businesses in search results.
+All embedded Google Maps iframes use the exact business address (`5437 Due West Rd, Powder Springs, GA 30127`) to avoid displaying competitor businesses in search results.
 
 ### Google Business Profile
 
@@ -310,7 +310,7 @@ To appear in Google's local business results (map pack), set up a Google Busines
 - **Business name:** Atlas Mitigation
 - **Primary category:** Water Damage Restoration Service
 - **Secondary categories:** Fire Damage Restoration Service, Mold Remediation Service
-- **Address:** 1720 Mars Hill Rd, Acworth, GA 30101
+- **Address:** 5437 Due West Rd, Powder Springs, GA 30127
 - **Phone:** (770) 588-1119
 - **Website:** https://atlasmitigation.com
 - **Hours:** 24/7

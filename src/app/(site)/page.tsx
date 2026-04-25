@@ -122,7 +122,7 @@ const benefits = [
 
 // Service areas
 const serviceAreas = [
-  { city: "Acworth", slug: "acworth", featured: true },
+  { city: "Powder Springs", slug: "acworth", featured: true },
   { city: "Marietta", slug: "marietta", featured: true },
   { city: "Kennesaw", slug: "kennesaw", featured: true },
   { city: "Woodstock", slug: "woodstock", featured: false },
@@ -466,7 +466,7 @@ export default async function HomePage() {
 
             <div className="relative aspect-square overflow-hidden rounded-lg lg:aspect-auto lg:min-h-[400px]">
               <iframe
-                src="https://www.google.com/maps?q=1720+Mars+Hill+Rd,+Acworth,+GA+30101&output=embed"
+                src="https://www.google.com/maps?q=5437+Due+West+Rd,+Powder+Springs,+GA+30127&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

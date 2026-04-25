@@ -96,9 +96,9 @@ export function Footer() {
               <div className="flex items-start gap-3 text-gray-300 py-2">
                 <MapPin className="h-5 w-5 text-atlas-accent shrink-0 mt-0.5" />
                 <span>
-                  1720 Mars Hill Rd
+                  5437 Due West Rd
                   <br />
-                  Acworth, GA 30101
+                  Powder Springs, GA 30127
                 </span>
               </div>
               <div className="flex items-center gap-3 text-gray-300 py-2">
