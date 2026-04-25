@@ -63,7 +63,7 @@ export function Footer() {
           <div>
             <Link href="/" className="flex items-center mb-4">
               <Image
-                src="/logo.webp"
+                src="/logo-transparent.webp"
                 alt="Atlas Mitigation"
                 width={40}
                 height={48}
