@@ -125,6 +125,16 @@ export function LocalBusinessSchema(props: LocalBusinessSchemaProps = {}) {
       "https://www.yelp.com/biz/atlas-mitigation-acworth",
       "https://nextdoor.com/pages/atlas-mitigation/",
     ],
+    hasCredential: {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Professional Certification",
+      name: "IICRC Certified Firm",
+      recognizedBy: {
+        "@type": "Organization",
+        name: "Institute of Inspection Cleaning and Restoration Certification",
+        url: "https://www.iicrc.org",
+      },
+    },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Restoration Services",

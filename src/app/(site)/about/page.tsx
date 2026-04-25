@@ -277,10 +277,18 @@ export default function AboutPage() {
                   <Shield className="h-8 w-8 text-atlas-primary" />
                 </div>
                 <div>
-                  <div className="font-semibold">IICRC Certified Firm</div>
+                  <div className="font-semibold">IICRC Certified Firm #70250959</div>
                   <div className="text-sm text-white/60">
                     Institute of Inspection Cleaning and Restoration Certification
                   </div>
+                  <a
+                    href="/images/iicrc-certificate-2026.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 inline-block text-xs text-atlas-primary hover:underline"
+                  >
+                    View Certificate (Valid through 12/31/2026)
+                  </a>
                 </div>
               </div>
             </div>

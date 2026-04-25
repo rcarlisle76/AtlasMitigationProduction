@@ -139,7 +139,7 @@ const serviceAreas = [
 
 // Trust badges/certifications
 const certifications = [
-  "IICRC Certified",
+  "IICRC Certified Firm #70250959",
   "Licensed & Insured",
   "EPA Lead-Safe Certified",
   "BBB Accredited",
