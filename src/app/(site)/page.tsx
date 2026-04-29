@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import {
   Droplets,
@@ -135,6 +136,18 @@ const serviceAreas = [
   { city: "Downtown Atlanta", slug: "downtown-atlanta", featured: false },
   { city: "Lawrenceville", slug: "lawrenceville", featured: false },
   { city: "Sandy Springs", slug: "sandy-springs", featured: false },
+]
+
+// Insurance Partners logos
+const INSURANCE_LOGOS = [
+  { src: "/images/insurance/allstate.svg", alt: "Allstate insurance logo" },
+  { src: "/images/insurance/state-farm.svg", alt: "State Farm insurance logo" },
+  { src: "/images/insurance/encompass.svg", alt: "Encompass insurance logo" },
+  { src: "/images/insurance/usaa.svg", alt: "USAA insurance logo" },
+  { src: "/images/insurance/liberty-mutual.svg", alt: "Liberty Mutual insurance logo" },
+  { src: "/images/insurance/asi.svg", alt: "ASI insurance logo" },
+  { src: "/images/insurance/openly.svg", alt: "Openly insurance logo" },
+  { src: "/images/insurance/progressive.svg", alt: "Progressive insurance logo" },
 ]
 
 // Trust badges/certifications
@@ -499,6 +512,57 @@ export default async function HomePage() {
               <YelpIcon className="h-5 w-5 text-[#FF1A1A]" />
               <span className="text-sm font-medium">Recommended on Yelp</span>
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Insurance Partners Section */}
+      <section className="bg-secondary py-12" aria-label="Trusted Insurance Partners">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold">Trusted Insurance Partners</h2>
+            <p className="text-muted-foreground mt-2">
+              We work directly with all major carriers to make your claim process seamless.
+            </p>
+          </div>
+
+          <div className="overflow-hidden">
+            <div className="flex animate-marquee">
+              {/* First set of logos */}
+              {INSURANCE_LOGOS.map((logo) => (
+                <div
+                  key={logo.alt}
+                  className="mx-6 inline-flex items-center justify-center rounded-xl shadow-sm px-6 py-4 w-[160px] h-[80px] shrink-0 bg-white"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={140}
+                    height={60}
+                    className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    unoptimized
+                  />
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop — hidden from screen readers */}
+              <div aria-hidden="true" className="contents">
+                {INSURANCE_LOGOS.map((logo) => (
+                  <div
+                    key={`${logo.alt}-duplicate`}
+                    className="mx-6 inline-flex items-center justify-center rounded-xl shadow-sm px-6 py-4 w-[160px] h-[80px] shrink-0 bg-white"
+                  >
+                    <Image
+                      src={logo.src}
+                      alt=""
+                      width={140}
+                      height={60}
+                      className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                      unoptimized
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
