@@ -1,3 +1,5 @@
+import Script from "next/script"
+
 interface HowToStep {
   step: number
   title: string
@@ -26,8 +28,11 @@ export function HowToSchema({ name, description, steps, totalTime }: HowToSchema
     })),
   }
 
+  // Note: dangerouslySetInnerHTML is safe here because JSON.stringify
+  // produces valid JSON output, not arbitrary HTML
   return (
-    <script
+    <Script
+      id="howto-schema"
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />

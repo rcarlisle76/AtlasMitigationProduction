@@ -31,6 +31,15 @@ export function ServiceSchema({
     "Woodstock",
     "Canton",
     "Roswell",
+    "Alpharetta",
+    "Smyrna",
+    "Powder Springs",
+    "Dallas",
+    "Decatur",
+    "Buckhead",
+    "Downtown Atlanta",
+    "Lawrenceville",
+    "Sandy Springs",
   ],
   provider = defaultProvider,
 }: ServiceSchemaProps) {
@@ -56,7 +65,6 @@ export function ServiceSchema({
       name: area,
     })),
     serviceType: name,
-    termsOfService: `${provider.url}/terms`,
     availableChannel: {
       "@type": "ServiceChannel",
       serviceUrl: serviceUrl,

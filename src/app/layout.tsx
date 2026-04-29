@@ -15,17 +15,6 @@ export const metadata: Metadata = {
   },
   description:
     "24/7 emergency fire and water damage restoration in Acworth, Marietta, Kennesaw and metro Atlanta. Specializing in high-end homes and commercial properties. Call (770) 588-1119.",
-  keywords: [
-    "water damage restoration",
-    "fire damage restoration",
-    "mold remediation",
-    "emergency restoration",
-    "Acworth GA",
-    "Marietta GA",
-    "Kennesaw GA",
-    "Atlanta restoration",
-    "commercial restoration",
-  ],
   authors: [{ name: "Atlas Mitigation" }],
   creator: "Atlas Mitigation",
   publisher: "Atlas Mitigation",

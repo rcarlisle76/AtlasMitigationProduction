@@ -74,7 +74,6 @@ export default async function ServicePage({ params }: ServicePageProps) {
         name={service.title}
         description={service.excerpt}
         slug={service.slug}
-        areaServed={["Acworth", "Marietta", "Kennesaw", "Woodstock", "Roswell"]}
       />
       <FAQSchema
         faqs={service.faqs}
