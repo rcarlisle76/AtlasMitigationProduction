@@ -162,6 +162,25 @@ export default function ContactPage() {
                 </CardContent>
               </Card>
 
+              {/* Mailing Address */}
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-atlas-primary text-white">
+                      <MapPin className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">Mailing Address</h3>
+                      <p className="mt-1">
+                        1720 Mars Hill Rd, Suites 8-142
+                        <br />
+                        Acworth, GA 30101
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
               {/* Hours */}
               <Card>
                 <CardContent className="p-6">
