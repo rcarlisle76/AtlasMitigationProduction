@@ -148,6 +148,14 @@ const INSURANCE_LOGOS = [
   { src: "/images/insurance/asi.svg", alt: "ASI insurance logo" },
   { src: "/images/insurance/openly.svg", alt: "Openly insurance logo" },
   { src: "/images/insurance/progressive.svg", alt: "Progressive insurance logo" },
+  { src: "/images/insurance/nationwide.svg", alt: "Nationwide insurance logo" },
+  { src: "/images/insurance/chubb.svg", alt: "Chubb insurance logo" },
+  { src: "/images/insurance/amica.svg", alt: "Amica insurance logo" },
+  { src: "/images/insurance/auto-owners.png", alt: "Auto-Owners insurance logo" },
+  { src: "/images/insurance/georgia-farm-bureau.svg", alt: "Georgia Farm Bureau insurance logo" },
+  { src: "/images/insurance/farmers.svg", alt: "Farmers insurance logo" },
+  { src: "/images/insurance/travelers.jpg", alt: "Travelers insurance logo" },
+  { src: "/images/insurance/cincinnati-insurance.svg", alt: "Cincinnati Insurance logo" },
 ]
 
 // Trust badges/certifications

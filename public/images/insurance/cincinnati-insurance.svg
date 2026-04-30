@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 120" width="280" height="120">
+  <rect width="280" height="120" fill="#ffffff" rx="6"/>
+  <rect width="280" height="8" y="0" fill="#003087" rx="0"/>
+  <rect width="280" height="8" y="112" fill="#003087" rx="0"/>
+  <text x="140" y="42" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="bold" fill="#003087" text-anchor="middle" dominant-baseline="middle">THE CINCINNATI</text>
+  <text x="140" y="72" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="bold" fill="#003087" text-anchor="middle" dominant-baseline="middle">INSURANCE COMPANY</text>
+</svg>
