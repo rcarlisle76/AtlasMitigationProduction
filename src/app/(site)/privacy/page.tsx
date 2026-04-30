@@ -197,7 +197,7 @@ export default function PrivacyPolicyPage() {
             <p className="mt-4">
               <strong>Help:</strong> Reply <strong>HELP</strong> to any message
               to receive: &ldquo;Atlas Mitigation: For help, call (770) 588-1119
-              or email info@atlasmitigation.com. Msg &amp; data rates may apply.
+              or email jonathan@atlasmitigation.com. Msg &amp; data rates may apply.
               Reply STOP to cancel.&rdquo;
             </p>
 
@@ -290,10 +290,10 @@ export default function PrivacyPolicyPage() {
               <div className="flex items-center gap-2 text-sm">
                 <Mail className="h-4 w-4 text-atlas-primary" />
                 <a
-                  href="mailto:info@atlasmitigation.com"
+                  href="mailto:jonathan@atlasmitigation.com"
                   className="hover:text-atlas-primary transition-colors"
                 >
-                  info@atlasmitigation.com
+                  jonathan@atlasmitigation.com
                 </a>
               </div>
             </div>

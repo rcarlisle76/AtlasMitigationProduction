@@ -28,7 +28,7 @@ const defaultBusinessInfo: LocalBusinessSchemaProps = {
   description:
     "Premium fire and water damage restoration services for high-end homes and commercial properties in the Atlanta metro area. 24/7 emergency response available.",
   telephone: "+1-770-588-1119",
-  email: "info@atlasmitigation.com",
+  email: "jonathan@atlasmitigation.com",
   address: {
     streetAddress: "5437 Due West Rd",
     addressLocality: "Powder Springs",

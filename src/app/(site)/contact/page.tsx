@@ -123,10 +123,10 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold">Email</h3>
                       <a
-                        href="mailto:info@atlasmitigation.com"
+                        href="mailto:jonathan@atlasmitigation.com"
                         className="mt-1 text-atlas-primary hover:underline"
                       >
-                        info@atlasmitigation.com
+                        jonathan@atlasmitigation.com
                       </a>
                       <p className="mt-1 text-sm text-muted-foreground">
                         We respond within 2 hours
