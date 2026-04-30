@@ -535,7 +535,7 @@ export default async function HomePage() {
           </div>
 
           <div className="overflow-hidden">
-            <div className="flex animate-marquee">
+            <div className="flex min-w-max animate-marquee">
               {/* First set of logos */}
               {INSURANCE_LOGOS.map((logo) => (
                 <div
@@ -552,24 +552,23 @@ export default async function HomePage() {
                   />
                 </div>
               ))}
-              {/* Duplicate set for seamless loop — hidden from screen readers */}
-              <div aria-hidden="true" className="contents">
-                {INSURANCE_LOGOS.map((logo) => (
-                  <div
-                    key={`${logo.alt}-duplicate`}
-                    className="mx-6 inline-flex items-center justify-center rounded-xl shadow-sm px-6 py-4 w-[160px] h-[80px] shrink-0 bg-white"
-                  >
-                    <Image
-                      src={logo.src}
-                      alt=""
-                      width={140}
-                      height={60}
-                      className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                      unoptimized
-                    />
-                  </div>
-                ))}
-              </div>
+              {/* Duplicate set for seamless loop — each item individually hidden from screen readers */}
+              {INSURANCE_LOGOS.map((logo) => (
+                <div
+                  key={`${logo.alt}-duplicate`}
+                  aria-hidden="true"
+                  className="mx-6 inline-flex items-center justify-center rounded-xl shadow-sm px-6 py-4 w-[160px] h-[80px] shrink-0 bg-white"
+                >
+                  <Image
+                    src={logo.src}
+                    alt=""
+                    width={140}
+                    height={60}
+                    className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    unoptimized
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
